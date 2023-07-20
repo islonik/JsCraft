@@ -1,0 +1,2 @@
+# JsCraft
+Minor javascript applications
