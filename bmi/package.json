@@ -1,0 +1,25 @@
+{
+  "name": "bmi",
+  "version": "1.0.0",
+  "description": "a simple BMI function and jest tests",
+  "main": "bmi.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "verbose" : true
+  },
+  "repository": {
+    "type": "git",
+    "url": "JsCraft"
+  },
+  "keywords": [
+    "js",
+    "jest"
+  ],
+  "author": "Nikita Lipatov",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
