@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <script src="Calculator.js"></script>
+		<script src="jquery-1.7.1.js"></script>
+    </head>
+    <body>
+        <form action="Calculator.html" method="post">
+            <div>
+				<div>Please input math expression (for example: '2 + 2 * 2 - 1/0.5 + 3^2 + (7 + 7) * 0.1'  (which equal 14.4)):</div>
+                <input id="idExpressionText"     size="35    type="text"     name="expressionText" />
+                <input id="idExpressionButton"   type="button"   onclick="calculateExpressionOnClick()" value="Calculate"><BR>
+				<div>Result:</div>
+				<input id="idResult" size="35" type="text" name="resultName" readonly="readonly"/>
+            </div>
+        </form>
+        <script>
+
+            $(document).ready(function() {
+				<!--alert('Hello World!'); -->
+            });
+
+            function calculateExpressionOnClick() {
+                var expressionValue = $("#idExpressionText").val();
+                var calculator = new Calculator();
+                var text = calculator.calculate(expressionValue);
+				$("#idResult").val(text);
+                <!--alert('Result is ' + text); -->
+            }
+
+        </script>
+
+    </body>
+</html>
+
