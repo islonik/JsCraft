@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Little Lemon</title>
+        <link rel="stylesheet" href="index.css">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="HTML5 Example Page">
+    </head>
+    <body>
+        <script src="index.js"></script>
+        <script type="text/javascript">
+            function byDefault() {
+                document.getElementById("menu").style.display = "block";
+                document.getElementById("about").style.display = "none";
+                document.getElementById("contact").style.display = "none";
+            }
+            window.onload = byDefault;
+        </script>
+
+        <header>
+            <h1>Little Lemon</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showNav('menu')">Menu</a></li>
+                <li><a href="#" onclick="showNav('about')">About</a></li>
+                <li><a href="#" onclick="showNav('contact')">Contact</a></li>
+              </ul>
+        </nav>
+
+        <main>
+            <div id="menu">
+                Menu
+            </div>
+            <div id="about">
+                <p>Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
+
+                <p>Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant. To craft the menu, Mario relies on family recipes and his experience as a chef in Italy. Adrian does all the marketing for the restaurant and led the effort to expand the menu beyond classic Italian to incorporate additional cuisines from the Mediterranean region.</p>   
+            </div>
+            <div id="contact">
+                <p>
+                    <b>Address</b><br>
+                    7500 W North Ave<br>
+                    Elmwood Park<br>
+                    60707
+                </p>
+                <p>
+                    <b>Phone</b><br> 
+                    708-452-6000
+                </p>
+                <p>
+                    <b>Price</b><br> 
+                    $
+                </p>
+                <p>
+                    <b>Opening hours</b><br>
+                    Mon-Sat 11am-midnight, Sun noon-midnight
+                </p>
+            </div>
+        </main>
+
+        <footer></footer>
+    </body>
+</html>
