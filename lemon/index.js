@@ -11,9 +11,9 @@ function showNav(id) {
     } else if (id == "contact") {
         document.getElementById("menu").style.display = "none";
         document.getElementById("about").style.display = "none";
-        document.getElementById("contact").style.display = "block";
+        document.getElementById("contact").style.display = "flex";
     } else { // menu
-        document.getElementById("menu").style.display = "block";
+        document.getElementById("menu").style.display = "flex";
         document.getElementById("about").style.display = "none";
         document.getElementById("contact").style.display = "none";
     }
