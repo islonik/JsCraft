@@ -51,6 +51,18 @@ footer img {
     vertical-align: middle;
 }
 
+/* style also changes in index.js */
+#contact {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+} 
+
+article {
+    flex: 4;
+}
+
 .menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -78,26 +90,26 @@ footer img {
     border-radius: 10px;
 }
 
-#home-menu ul {
+.home-menu ul {
     background-color: white;
     border-radius: 5px;
     list-style: none;
     padding: 30px;
 }
 
-#home-menu h2 {
+.home-menu h2 {
     text-shadow: 0.5px 0.5px black;
 }
 
-#home-menu ul:after {
+.home-menu ul:after {
     content: "";
     clear: both;
     display: block;
 }
 
-#home-menu li {
+.home-menu li {
     float: left;
-    width: 50%;
+    width: 75%;
     padding: 0;
     margin: 20px 0 20px 8%;
     border-bottom: 1px solid slategray;
@@ -130,18 +142,8 @@ footer img {
     font-size: 14px;
     padding-top: 10px;
     position: relative;
-    top: -8px;
+    top: -7px;
 }
 
-/* style also changes in index.js */
-#contact {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
-} 
 
-article {
-    flex: 4;
-}
 
