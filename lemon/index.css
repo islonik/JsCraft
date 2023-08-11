@@ -1,3 +1,4 @@
+/* Common element selectors */
 body {
     background-color: #edefee;
     font-family: 'Markazi Text', serif;
@@ -33,22 +34,6 @@ li {
     display: inline-block;
 }
 
-section {
-    display: flex;
-}
-
-/* style also changes in index.js */
-#contact {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
-} 
-
-article {
-    flex: 4;
-}
-
 footer {
     display: flex;
     text-align: center; 
@@ -65,3 +50,98 @@ footer img {
     height: 4rem;
     vertical-align: middle;
 }
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    width: 100%;
+    left: 0%;
+    text-align: center;
+    padding: 20px;
+    opacity: 0.9;
+    background-color: rgba(100, 98, 98, 0.288);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.intro-menu > img {
+    width: 75%;
+    border-radius: 10%;
+    height: auto;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    filter: blur(0.5px);
+}
+
+.intro-menu {
+    text-align: center;
+    color: rgb(39, 39, 39);
+    border-radius: 10px;
+}
+
+#home-menu ul {
+    background-color: white;
+    border-radius: 5px;
+    list-style: none;
+    padding: 30px;
+}
+
+#home-menu h2 {
+    text-shadow: 0.5px 0.5px black;
+}
+
+#home-menu ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#home-menu li {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 20px 0 20px 8%;
+    border-bottom: 1px solid slategray;
+}
+
+.dish {
+    float: left;
+    color: #555;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    padding-right: 15px;
+}
+
+.price {
+    float: right;
+    color: #555;
+    font-weight: bold;
+    position: relative;
+    background-color: transparent;
+    padding-left: 15px;
+}
+
+.description {
+    clear: both;
+    display: block;
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
+    padding-top: 10px;
+    position: relative;
+    top: -8px;
+}
+
+/* style also changes in index.js */
+#contact {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+} 
+
+article {
+    flex: 4;
+}
+

@@ -13,7 +13,7 @@ function showNav(id) {
         document.getElementById("about").style.display = "none";
         document.getElementById("contact").style.display = "flex";
     } else { // menu
-        document.getElementById("menu").style.display = "flex";
+        document.getElementById("menu").style.display = "grid";
         document.getElementById("about").style.display = "none";
         document.getElementById("contact").style.display = "none";
     }

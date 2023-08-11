@@ -13,7 +13,7 @@
         <!-- Executes when page is loaded/updated -->
         <script type="text/javascript">
             function byDefault() {
-                document.getElementById("menu").style.display = "block";
+                document.getElementById("menu").style.display = "grid";
                 document.getElementById("about").style.display = "none";
                 document.getElementById("contact").style.display = "none";
             }
@@ -34,14 +34,61 @@
         </nav>
 
         <main>
-            <div id="menu">
-                Menu
+            <div id="menu" class="menu">
+                <div class="intro-menu">     
+                    <!-- img tile system -->
+                    <img id="caption_img" src="img/chad-montano.jpg"  />  
+                    <img id="caption_img" src="img/ella-olsson.jpg" />
+                </div>
+                <section id="home-menu">
+                    <h2>FOOD MENU</h2>
+                    <h3>Entrees, mains, and handhelds</h3>
+                    <ul>
+                        <li>
+                            <span class="dish">Nachos</span>
+                            <span class="price">$12</span>
+                            <span class="description">cheese, onions, tomotoes. 
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dish">Tacos.</span>
+                            <span class="price">$12</span>
+                            <span class="description">chicken or beef with your choice of side.</span>
+                        </li>
+                        <li>
+                            <span class="dish">Chicken rice bowl.</span>
+                            <span class="price">$16</span>
+                            <span class="description">
+                                brown rice, and veggies, served with choice or sauce 
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dish">Grilled chicken</span>
+                            <span class="price">$15</span>
+                            <span class="description">
+                                Juicy grilled chicken served with choice of sauce.
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dish">Steak and fired beans.</span>
+                            <span class="price">$15</span>
+                            <span class="description">Steak and your choice of side.</span>
+                        </li>
+                        <li>
+                            <span class="dish">Burrito.</span>
+                            <span class="price">$12</span>
+                            <span class="description">Your choice of beef or chicken.</span>
+                        </li>
+                    </ul>
+                </section>
             </div>
+
             <div id="about">
                 <p>Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
 
                 <p>Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant. To craft the menu, Mario relies on family recipes and his experience as a chef in Italy. Adrian does all the marketing for the restaurant and led the effort to expand the menu beyond classic Italian to incorporate additional cuisines from the Mediterranean region.</p>   
             </div>
+
             <div id="contact">
                 <article>
                     <b>Address</b><br>
@@ -59,7 +106,7 @@
                 </article>
                 <article>
                     <b>Opening hours</b><br>
-                    Mon-Sat 11am-midnight, Sun noon-midnight
+                    Monday-Saturday 11am-midnight, Sunday noon-midnight
                 </article>
             </div>
         </main>
