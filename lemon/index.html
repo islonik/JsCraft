@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="HTML5 Example Page">
+
     </head>
     <body>
         <!-- <script src="index.js"></script> -->
@@ -15,7 +16,7 @@
             function byDefault() {
                 document.getElementById("menu").style.display = "none";
                 document.getElementById("about").style.display = "none";
-                document.getElementById("contact").style.display = "flex";
+                document.getElementById("home").style.display = "flex";
             }
 
             // The difference between style.visibility and style.display:
@@ -25,15 +26,15 @@
                 if (id == "about") {
                     document.getElementById("menu").style.display = "none";
                     document.getElementById("about").style.display = "block";
-                    document.getElementById("contact").style.display = "none";
-                } else if (id == "contact") {
+                    document.getElementById("home").style.display = "none";
+                } else if (id == "home") {
                     document.getElementById("menu").style.display = "none";
                     document.getElementById("about").style.display = "none";
-                    document.getElementById("contact").style.display = "flex";
+                    document.getElementById("home").style.display = "flex";
                 } else { // main food menu
                     document.getElementById("menu").style.display = "grid";
                     document.getElementById("about").style.display = "none";
-                    document.getElementById("contact").style.display = "none";
+                    document.getElementById("home").style.display = "none";
                 }
             }
 
@@ -42,44 +43,45 @@
 
         <header>
             <!-- Little lemon -->
-            <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/asset_16@4x.png?raw=true">
+            <!-- <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/asset_16@4x.png?raw=true"> -->
+            <img src="img/asset_16@4x.png">
         </header>
 
         <nav>
             <ul>
+                <li><a href="#" onclick="showTab('home')">Home</a></li>
                 <li><a href="#" onclick="showTab('menu')">Menu</a></li>
                 <li><a href="#" onclick="showTab('about')">About</a></li>
-                <li><a href="#" onclick="showTab('contact')">Contact</a></li>
                 <li><a href="mailto:example@example.com">Email</a></li>
             </ul>
         </nav>
 
         <main>
 
-            <div id="contact">
+            <div id="home">
                 <article>
                     <b>We are providing a discount of 30% on your Birthday!</b><br/><br/>
                     Book your party today! Just send to us an email!
                 </article>
                 <article>
-                    <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/asset_7@4x.png?raw=true" /><br>  
+                    <img src="img/asset_7@4x.png" /><br>  
                     <b>Address</b><br><br>
                     7500 W North Ave<br>
                     Elmwood Park<br>
                     60707
                 </article>
                 <article>
-                    <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/asset_9@4x.png?raw=true" /><br>  
+                    <img src="img/asset_9@4x.png" /><br>  
                     <b>Phone</b><br><br>
                     708-452-6000
                 </article>
                 <article>
-                    <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/asset_18@4x.png?raw=true" /><br>  
+                    <img src="img/asset_18@4x.png" /><br>  
                     <b>Price</b><br><br> 
                     $
                 </article>
                 <article>
-                    <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/asset_20@4x.png?raw=true" /><br>  
+                    <img src="img/asset_20@4x.png" /><br>  
                     <b>Opening hours</b><br><br> 
                     Monday-Friday:<br>2pm - 10pm<br><br>
                     Saturday:<br>2pm - 11pm<br><br>
@@ -90,8 +92,8 @@
             <div id="menu" >
                 <div class="menu">
                     <div class="intro-menu">
-                        <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/food_1.jpg?raw=true" />  
-                        <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/food_2.jpg?raw=true" />
+                        <img src="img/food_1.jpg" />  
+                        <img src="img/food_2.jpg" />
                     </div>
                     <section class="home-menu">
                         <h2>FOOD MENU</h2>
@@ -140,8 +142,8 @@
 
                 <div class="menu">   
                     <div class="intro-menu">     
-                        <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/drink_1.jpg?raw=true" />
-                        <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/drink_2.jpg?raw=true" />
+                        <img src="img/drink_1.jpg" />
+                        <img src="img/drink_2.jpg" />
                     </div>
                         
                     <section class="home-menu">
@@ -197,8 +199,8 @@
 
                 <div class="menu">   
                     <div class="intro-menu">    
-                        <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/desert_1.jpg?raw=true" />
-                        <img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/desert_2.jpg?raw=true" />
+                        <img src="img/desert_1.jpg" />
+                        <img src="img/desert_2.jpg" />
                     </div>
                     <section class="home-menu">
                         <h2>DESERT MENU</h2>
@@ -259,7 +261,7 @@
         <footer>
             <div>
                 <ul>
-                    <li><img src="https://github.com/islonik/JsCraft/blob/main/lemon/img/asset_18@4x.png?raw=true"></li>
+                    <li><img src="img/asset_18@4x.png"></li>
                     <li>Copyright Little Lemon</li>
                 </ul>
             </div>

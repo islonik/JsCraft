@@ -52,7 +52,7 @@ footer img {
 }
 
 /* style also changes in index.js */
-#contact {
+#home {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
