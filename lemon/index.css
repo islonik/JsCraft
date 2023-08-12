@@ -53,14 +53,50 @@ footer img {
 
 /* style also changes in index.js */
 #contact {
-    flex-direction: row;
+    /* flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; */
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #b2c3af;
+    padding: 10px;
+    border-radius: 25px;
 } 
 
 article {
-    flex: 4;
+    display: inline-block;
+    font-family: "Open Sans", Arial;
+    font-size: 20px;
+    color: #000000;
+    text-align: auto;
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 12px;
+    border-radius: 25px;
+    opacity: 0.8;
+  }
+
+article:first-child {
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+}
+  
+article:not(:first-child) {
+    flex: 1;
+}
+
+#top-pic {
+    max-height: 100%;
+    width: 10rem;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu {
