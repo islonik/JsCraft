@@ -100,13 +100,14 @@ article:not(:first-child) img {
     text-align: center;
     padding: 20px;
     opacity: 0.9;
-    background-color: rgba(100, 98, 98, 0.288);
+    background-color: #b2c3af;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 25px;
 }
 
 .intro-menu > img {
     width: 75%;
-    border-radius: 10%;
+    border-radius: 25px;
     height: auto;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     filter: blur(0.5px);
@@ -115,12 +116,12 @@ article:not(:first-child) img {
 .intro-menu {
     text-align: center;
     color: rgb(39, 39, 39);
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .home-menu ul {
     background-color: white;
-    border-radius: 5px;
+    border-radius: 25px;
     list-style: none;
     padding: 30px;
 }
