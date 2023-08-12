@@ -53,11 +53,6 @@ footer img {
 
 /* style also changes in index.js */
 #contact {
-    /* flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start; */
-
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -88,6 +83,12 @@ article:first-child {
   
 article:not(:first-child) {
     flex: 1;
+}
+
+article:not(:first-child) img {
+    max-height: 100%;
+    height: 7rem;
+    border-bottom: 3px solid slategray;
 }
 
 .menu {
