@@ -78,7 +78,7 @@ article {
     margin: 12px;
     border-radius: 25px;
     opacity: 0.8;
-  }
+}
 
 article:first-child {
     width: 100%;
@@ -88,15 +88,6 @@ article:first-child {
   
 article:not(:first-child) {
     flex: 1;
-}
-
-#top-pic {
-    max-height: 100%;
-    width: 10rem;
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .menu {

@@ -13,9 +13,9 @@
         <!-- Executes when page is loaded/updated -->
         <script type="text/javascript">
             function byDefault() {
-                document.getElementById("menu").style.display = "grid";
+                document.getElementById("menu").style.display = "none";
                 document.getElementById("about").style.display = "none";
-                document.getElementById("contact").style.display = "none";
+                document.getElementById("contact").style.display = "flex";
             }
             window.onload = byDefault;
         </script>
@@ -27,14 +27,42 @@
 
         <nav>
             <ul>
-                <li><a href="#" onclick="showNav('menu')">Menu</a></li>
-                <li><a href="#" onclick="showNav('about')">About</a></li>
-                <li><a href="#" onclick="showNav('contact')">Contact</a></li>
-                <li><a href="mailto:example@example.com">Order</a></li>
+                <li><a href="#" onclick="showTab('menu')">Menu</a></li>
+                <li><a href="#" onclick="showTab('about')">About</a></li>
+                <li><a href="#" onclick="showTab('contact')">Contact</a></li>
+                <li><a href="mailto:example@example.com">Email</a></li>
             </ul>
         </nav>
 
         <main>
+
+            <div id="contact">
+                <article>
+                    <b>We are providing a discount of 30% on your Birthday!</b><br/><br/>
+                    Book your party today! Just send to us an email!
+                </article>
+                <article>
+                    <b>Address</b><br><br>
+                    7500 W North Ave<br>
+                    Elmwood Park<br>
+                    60707
+                </article>
+                <article>
+                    <b>Phone</b><br><br>
+                    708-452-6000
+                </article>
+                <article>
+                    <b>Price</b><br><br> 
+                    $
+                </article>
+                <article>
+                    <b>Opening hours</b><br><br> 
+                    Monday-Friday:<br>2pm - 10pm<br><br>
+                    Saturday:<br>2pm - 11pm<br><br>
+                    Sunday:<br>2pm - 9pm
+                </article>
+            </div>
+
             <div id="menu" >
                 <div class="menu">
                     <div class="intro-menu">
@@ -203,28 +231,6 @@
                 <p>Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.</p>
 
                 <p>Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant. To craft the menu, Mario relies on family recipes and his experience as a chef in Italy. Adrian does all the marketing for the restaurant and led the effort to expand the menu beyond classic Italian to incorporate additional cuisines from the Mediterranean region.</p>   
-            </div>
-
-            <div id="contact">
-                <article><img id="top-pic" src="img/asset_20@4x.png"></article>
-                <article>
-                    <b>Address</b><br><br>
-                    7500 W North Ave<br>
-                    Elmwood Park<br>
-                    60707
-                </article>
-                <article>
-                    <b>Phone</b><br><br>
-                    708-452-6000
-                </article>
-                <article>
-                    <b>Price</b><br><br> 
-                    $
-                </article>
-                <article>
-                    <b>Opening hours</b><br><br> 
-                    Monday-Saturday<br>11am-midnight<br><br>Sunday<br>noon-midnight
-                </article>
             </div>
         </main>
 
