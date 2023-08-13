@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mathparser</title>
+        <link rel="shortcut icon" type="image/x-icon" href="icon.jpeg" />
+        <script src="mathparser.js"></script>
+    </head>
+    <body>
+        <div>
+            <div>Please input math expression (for example: '2 + 2 * 2 - 1/0.5 + 3^2 + (7 + 7) * 0.1'  (which equal 14.4)):</div>
+            <input id="idExpressionText"     size="35"    type="text"     name="expressionText" />
+            <button id="idExpressionButton"   type="button"   onclick="calculateExpressionOnClick()" value="Calculate">Calculate</button>
+            <br/>
+            <div>Result:</div>
+            <input id="idResult" size="35" type="text" name="resultName" readonly="readonly"/>
+        </div>
+        <script type="text/javascript">
+
+            function calculateExpressionOnClick() {
+                var expressionValue = document.getElementById("idExpressionText").value;
+                var calculator = new Calculator();
+                var text = calculator.calculate(expressionValue);
+                
+                console.log("Result: " + text);
+				document.getElementById("idResult").value = text
+            }
+
+        </script>
+
+    </body>
+</html>
+
