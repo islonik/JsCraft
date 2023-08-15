@@ -53,22 +53,22 @@ footer img {
 /* style also changes in index.js */
 #home {
     background: #b2c3af;
-    border-radius: 25px;
+    border-radius: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 10px;
+    padding: 1rem;
 } 
 
 article {
     background: white;
-    border-radius: 25px;
+    border-radius: 2rem;
     color: #000000;
     display: inline-block;
     font-family: "Open Sans", Arial;
-    font-size: 20px;
-    margin: 12px;
-    padding: 20px;
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: 2rem;
     opacity: 0.8;
     text-align: auto;
 }
@@ -84,48 +84,49 @@ article:not(:first-child) {
 }
 
 article:not(:first-child) img {
-    border-bottom: 3px solid slategray;
+    border-bottom: 0.1rem solid slategray;
     height: 7rem;
     max-height: 100%;
 }
 
 .menu {
     background-color: #b2c3af;
-    border-radius: 25px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 2rem;
+    box-shadow: rgb(38, 57, 77) 0rem 2rem 3rem -1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     left: 0%;
+    margin-bottom: 3rem;
     opacity: 0.9;
-    padding: 20px;
+    padding: 2rem;
     position: relative;
     text-align: center;
     width: 100%;
 }
 
 .intro-menu > img {
-    border-radius: 25px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    filter: blur(0.5px);
+    border-radius: 2rem;
+    box-shadow: rgb(38, 57, 77) 0rem 2rem 3rem -1rem;
+    filter: blur(0.03rem);
     height: auto;
     width: 75%;
 }
 
 .intro-menu {
-    border-radius: 25px;
+    border-radius: 2rem;
     color: rgb(39, 39, 39);
     text-align: center;
 }
 
 .home-menu ul {
     background-color: white;
-    border-radius: 25px;
+    border-radius: 2rem;
     list-style: none;
-    padding: 30px;
+    padding: 3rem;
 }
 
 .home-menu h2 {
-    text-shadow: 0.5px 0.5px black;
+    text-shadow: 0.06rem 0.06rem black;
 }
 
 .home-menu ul:after {
@@ -135,9 +136,9 @@ article:not(:first-child) img {
 }
 
 .home-menu li {
-    border-bottom: 1px solid slategray;
+    border-bottom: 0.08rem solid slategray;
     float: left;
-    margin: 20px 0 20px 8%;
+    margin: 2rem 0 2rem 8%;
     padding: 0;
     width: 75%;
 }
@@ -147,7 +148,7 @@ article:not(:first-child) img {
     color: #555;
     float: left;
     font-weight: bold;
-    padding-right: 15px;
+    padding-right: 1.5rem;
     position: relative;
     z-index: 1;
 }
@@ -158,18 +159,18 @@ article:not(:first-child) img {
     float: right;
     font-weight: bold;
     position: relative;
-    padding-left: 15px;
+    padding-left: 1.5rem;
 }
 
 .description {
     color: #999;
     clear: both;
     display: block;
-    font-size: 14px;
+    font-size: 1.2rem;
     font-style: italic;
-    padding-top: 10px;
+    padding-top: 1rem;
     position: relative;
-    top: -7px;
+    top: -0.7rem;
 }
 
 
