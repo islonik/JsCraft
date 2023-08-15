@@ -5,15 +5,15 @@ function showTab(id) {
     if (id == "about") {
         document.getElementById("menu").style.display = "none";
         document.getElementById("about").style.display = "block";
-        document.getElementById("contact").style.display = "none";
-    } else if (id == "contact") {
+        document.getElementById("home").style.display = "none";
+    } else if (id == "home") {
         document.getElementById("menu").style.display = "none";
         document.getElementById("about").style.display = "none";
-        document.getElementById("contact").style.display = "flex";
+        document.getElementById("home").style.display = "flex";
     } else { // main food menu
         document.getElementById("menu").style.display = "grid";
         document.getElementById("about").style.display = "none";
-        document.getElementById("contact").style.display = "none";
+        document.getElementById("home").style.display = "none";
     }
     
 }
