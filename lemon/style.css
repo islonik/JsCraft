@@ -8,6 +8,13 @@ body {
     margin-top: 3rem;
 }
 
+/* different colour for your browser size if less than 50rem ~ 800px */
+@media only screen and (max-width: 50rem) {
+    body {
+      background-color: rgb(126, 182, 135);
+    }
+}
+
 h1 {
     font-size: 3rem;
 }
