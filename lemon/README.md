@@ -1,6 +1,6 @@
 # Little Lemon
 
-Little lemon is a simple static HTML5 website with a native JS function and CSS styles. 
+Little lemon is a SPA (Single Page Application) made as a simple static HTML5 website with native JS functions and CSS styles. 
 
 This project was done as part of Meta-Front End Developer Certificate
 
