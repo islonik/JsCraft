@@ -89,9 +89,9 @@ test('20 - 7 = 13', () => {
   });
   expect(inputElement.value).toBe("7");
 
-  // click 'Minus' button 
-  let minusButton = screen.getByText("Minus");
-  fireEvent.click(minusButton);
+  // click 'Subtract' button 
+  let subtractButton = screen.getByText("Subtract");
+  fireEvent.click(subtractButton);
 
   // check the result, should be 13
   resultElement = dom.container.querySelector("#result");
