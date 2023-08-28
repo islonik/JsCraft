@@ -1,10 +1,13 @@
-import {useState,useRef} from "react"; 
+import {useState, useRef, useEffect} from "react"; 
 import "./App.css";
+import Switch from "./Switch";
+import { ThemeProvider, useTheme } from "./ThemeContext";
 
-function App() { 
+function MathCalc() { 
   const inputRef = useRef(0); 
   const resultRef = useRef(0); 
   const [result, setResult] = useState(0); 
+  const { theme } = useTheme();
  
   function plus(e) { 
     e.preventDefault(); 
@@ -35,14 +38,30 @@ function App() {
     e.preventDefault(); 
     setResult(0);
   }; 
+
+  useEffect(() => {
+    document.body.style.background = theme === "light" ? "white" : "black";
+  });
  
   return ( 
     <div className="App"> 
       <div> 
-        <h1>Simplest Working Calculator</h1> 
+        <h1 
+          style={{
+            color: theme === "light" ? "black" : "white",
+          }}
+          >
+          Simplest Working Calculator
+        </h1> 
+        <Switch/>
       </div> 
       <form> 
-        <p id="result">{result}</p> 
+        <p id="result" 
+          style={{
+            color: theme === "light" ? "black" : "white",
+          }}>
+          {result}
+        </p> 
         <input
           id="input"
           pattern="[0-9]" 
@@ -60,5 +79,13 @@ function App() {
     </div> 
   ); 
 } 
+
+function App() {
+  return (
+      <ThemeProvider>
+        <MathCalc/>
+      </ThemeProvider>
+  );
+}
  
 export default App; 
