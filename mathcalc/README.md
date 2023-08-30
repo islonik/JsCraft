@@ -15,8 +15,31 @@ In this project, state is stored in a primitive data string.
 // declare
 const [result, setResult] = useState(0); 
 
-// update
+// update for a primitive data string
 setResult((result) => result + Number(inputRef.current.value)); 
+
+// for example, declare complex data
+const [giftCard, setGiftCard] = useState(
+    {
+        firstName: "Jennifer",
+        lastName: "Smith",
+        text: "Free dinner for 4 guests",
+        valid: true,
+        instructions: "To use your coupon, click the button below.",
+    }
+);
+
+// for example, update complex data
+function spendGiftCard() {
+    setGiftCard(prevState => { 
+        return {
+            ...prevState,
+            text: "Your coupon has been used.",
+            valid: false,
+            instructions: "Please visit our restaurant to renew your gift card."
+        }
+    });
+}
 ```
 
 ### Ref
