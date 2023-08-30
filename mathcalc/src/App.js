@@ -41,7 +41,7 @@ function MathCalc() {
 
   useEffect(() => {
     document.body.style.background = theme === "light" ? "white" : "black";
-  });
+  }, [theme]);
  
   return ( 
     <div className="App"> 

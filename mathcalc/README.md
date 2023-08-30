@@ -73,7 +73,7 @@ setResult((result) => result + Number(inputRef.current.value));
 ```js
 useEffect(() => {
     document.body.style.background = theme === "light" ? "white" : "black";
-});
+}, [theme]);
 ```
 
 ### Theme
