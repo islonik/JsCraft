@@ -11,7 +11,7 @@ This project was done for <b>'Meta Front-End Developer Professional Certificate'
 <b>useState</b> hook can work with primitive (string) data and with complex data (state stored in objects)
 In this project, state is stored in a primitive data string.
 
-```react 
+```js
 // declare
 const [result, setResult] = useState(0); 
 
