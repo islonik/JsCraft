@@ -19,3 +19,30 @@ code {
 .headerIcon {
   margin-right: 2rem;
 }
+
+.card {
+  background-color: white; 
+  border-radius: 1rem;
+  color: black;
+}
+
+.image {
+  border-radius: 1rem;
+  padding: 0px;
+}
+
+.title {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.desc {
+  color: rgb(120, 120, 120);
+  padding-left: 1rem;
+}
+
+.see {
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
