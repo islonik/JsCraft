@@ -4,8 +4,9 @@ This project was done for <b>'Meta Front-End Developer Professional Certificate'
 
 ## Content
 * [fontawesome](#fontawesome) 
+* [chakra](#chakra) 
 
-### fontawesome
+### Fontawesome
 <b>Font Awesome</b> is a popular icon library that provides scalable vector icons that can be customized with CSS. 
 
 #### Imports:
@@ -61,3 +62,22 @@ const socials = [
     ))}
 </nav>
 ```
+
+### Chakra
+<b>Chakra</b> UI is a simple, modular and accessible component library that provides you with the building blocks you need for your React applications. 
+
+#### Imports
+```js
+import { Avatar, Heading, VStack } from "@chakra-ui/react";
+```
+
+#### Usage
+```js
+  <Avatar name="Nick Jonas" src="https://i.pravatar.cc/150?img=3" size="6xl"/>
+  <Heading>{greeting}</Heading>
+  <VStack>
+    <Heading>{bio1}</Heading>
+    <Heading>{bio2}</Heading>
+  </VStack>
+```
+
