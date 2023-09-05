@@ -18,14 +18,14 @@ import useSubmit from "../hooks/useSubmit";
 import {useAlertContext} from "../context/alertContext";
 
 const LandingSection = () => {
-  const {isLoading, response, submit} = useSubmit();
+  const {isLoading, output, submit} = useSubmit();
   const { onOpen } = useAlertContext();
 
   const formik = useFormik({
     initialValues: {
       firstName: '',
       email: '',
-      type: 'other',
+      type: 'hireMe',
       comment: ''
     },
 
@@ -49,19 +49,24 @@ const LandingSection = () => {
     // Pass resetForm as a parameter to your onSubmit function. 
     // That should give your function access to the resetForm method from Formik. 
     // If you want to use any methods from the formik library inside your onSubmit function, first pass a parameter to the function so you can have access to the formik method.
-    onSubmit: (values, {resetForm}) => {
-    
-      submit("localhost", values);
+    onSubmit: async (values, {setSubmitting, resetForm}) => {
 
-      if (!isLoading) {
-        onOpen(response.type, response.message);
+      await submit("localhost", values);
 
-        if (response.type == 'success') {
+      if (!isLoading && output.current != null) {
+        onOpen(output.current.type, output.current.message);
+
+        if (output.current.type == 'success') {
           //alert(JSON.stringify(values, null, 2));
 
           resetForm();
         }
+      } else {
+        console.log("Something wrong in useSubmit hook!");
       }
+
+      setSubmitting(false);
+      
     }
   });
 
@@ -105,7 +110,7 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
 
-              <FormControl>
+              <FormControl isInvalid={formik.errors.type}>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
                 <Select 
                   id="type" 
@@ -118,8 +123,9 @@ const LandingSection = () => {
                     <option value="openSource">
                       Open source consultancy session
                     </option>
-                    <option value="other" selected>Other</option>
+                    <option value="other">Other</option>
                 </Select>
+                <FormErrorMessage>{formik.values.type}</FormErrorMessage>
               </FormControl>
 
               <FormControl isInvalid={formik.touched.comment && formik.errors.comment}>
@@ -135,7 +141,7 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
 
-              <Button type="submit" colorScheme="purple" width="full">
+              <Button disabled={formik.isSubmitting} type="submit" colorScheme="purple" width="full">
                 Submit
               </Button>
             </VStack>
