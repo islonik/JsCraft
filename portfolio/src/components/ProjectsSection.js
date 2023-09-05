@@ -9,6 +9,7 @@ const projects = [
     title: "React Space",
     description:
       "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+    getPreview: () => require("../images/photo1_preview.jpg"),
     getImageSrc: () => require("../images/photo1.jpg"),
   },
   {
@@ -16,6 +17,7 @@ const projects = [
     title: "React Infinite Scroll",
     description:
       "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+    getPreview: () => require("../images/photo2_preview.jpg"),
     getImageSrc: () => require("../images/photo2.jpg"),
   },
   {
@@ -23,6 +25,7 @@ const projects = [
     title: "Photo Gallery",
     description:
       "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
+    getPreview: () => require("../images/photo3_preview.jpg"),
     getImageSrc: () => require("../images/photo3.jpg"),
   },
   {
@@ -30,6 +33,7 @@ const projects = [
     title: "Event planner",
     description:
       "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
+    getPreview: () => require("../images/photo4_preview.jpg"),
     getImageSrc: () => require("../images/photo4.jpg"),
   },
 ];
@@ -56,6 +60,7 @@ const ProjectsSection = () => {
             key={project.key}
             title={project.title}
             description={project.description}
+            preview={project.getPreview()}
             imageSrc={project.getImageSrc()}
           />
         ))}
