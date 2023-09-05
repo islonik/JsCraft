@@ -5,6 +5,7 @@ This project was done for <b>'Meta Front-End Developer Professional Certificate'
 ## Content
 * [fontawesome](#fontawesome) 
 * [chakra](#chakra) 
+* [formik](#formik)
 
 ### Fontawesome
 <b>Font Awesome</b> is a popular icon library that provides scalable vector icons that can be customized with CSS. 
@@ -81,3 +82,59 @@ import { Avatar, Heading, VStack } from "@chakra-ui/react";
   </VStack>
 ```
 
+### Formik
+
+#### Create formik + yup hook
+```js
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+      email: '',
+      type: 'other',
+      comment: ''
+    },
+
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+                    .label("Name")
+                    .required('Required'),
+      email:     Yup.string()
+                    .label("Email Address")
+                    .email('Invalid email address')
+                    .required('Required'),
+      type:      Yup.string()
+                    .label("Type of enquiry")
+                    .required('Required'),
+      comment:   Yup.string()
+                    .label("Your message")
+                    .min(25, "Must be at least 25 characters!")
+                    .required('Required')
+    }),
+
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+
+  });
+```
+
+#### OnSubmit
+```js
+  <form onSubmit={formik.handleSubmit}>
+```
+
+#### Input
+
+```js
+  <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
+    <FormLabel htmlFor="firstName">Name</FormLabel>
+    <Input
+      id="firstName"
+      name="firstName"
+      onChange={formik.handleChange}
+      onBlur={formik.handleBlur}
+      value={formik.values.firstName}
+    />
+    <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
+  </FormControl>
+```
