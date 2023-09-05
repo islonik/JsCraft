@@ -46,10 +46,23 @@ const LandingSection = () => {
                     .required('Required')
     }),
 
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
+    // Pass resetForm as a parameter to your onSubmit function. 
+    // That should give your function access to the resetForm method from Formik. 
+    // If you want to use any methods from the formik library inside your onSubmit function, first pass a parameter to the function so you can have access to the formik method.
+    onSubmit: (values, {resetForm}) => {
+    
+      submit("localhost", values);
 
+      if (!isLoading) {
+        onOpen(response.type, response.message);
+
+        if (response.type == 'success') {
+          //alert(JSON.stringify(values, null, 2));
+
+          resetForm();
+        }
+      }
+    }
   });
 
   return (
@@ -105,7 +118,7 @@ const LandingSection = () => {
                     <option value="openSource">
                       Open source consultancy session
                     </option>
-                    <option value="other">Other</option>
+                    <option value="other" selected>Other</option>
                 </Select>
               </FormControl>
 

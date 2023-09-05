@@ -14,7 +14,7 @@ const useSubmit = () => {
     const random = Math.random();
     setLoading(true);
     try {
-      await wait(2000);
+      await wait(200);
       if (random < 0.5) {
         throw new Error("Something went wrong");
       }
@@ -32,7 +32,7 @@ const useSubmit = () => {
     }
   };
 
-  return { isLoading, response, submit };
+  return {isLoading, response, submit };
 }
 
 export default useSubmit;

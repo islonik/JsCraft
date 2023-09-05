@@ -84,6 +84,13 @@ import { Avatar, Heading, VStack } from "@chakra-ui/react";
 
 ### Formik
 
+Formik is the world's most popular open source form library for React and React Native.
+
+#### resetForm
+Pass resetForm as a parameter to your onSubmit function. 
+That should give your function access to the resetForm method from Formik. 
+If you want to use any methods from the formik library inside your onSubmit function, first pass a parameter to the function so you can have access to the formik method.
+
 #### Create formik + yup hook
 ```js
   const formik = useFormik({
