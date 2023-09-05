@@ -97,7 +97,7 @@ If you want to use any methods from the formik library inside your onSubmit func
     initialValues: {
       firstName: '',
       email: '',
-      type: 'other',
+      type: 'hireMe',
       comment: ''
     },
 
@@ -118,10 +118,28 @@ If you want to use any methods from the formik library inside your onSubmit func
                     .required('Required')
     }),
 
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
+    // Pass resetForm as a parameter to your onSubmit function. 
+    // That should give your function access to the resetForm method from Formik. 
+    // If you want to use any methods from the formik library inside your onSubmit function, first pass a parameter to the function so you can have access to the formik method.
+    onSubmit: async (values, {setSubmitting, resetForm}) => {
 
+      await submit("localhost", values);
+
+      if (!isLoading && output.current != null) {
+        onOpen(output.current.type, output.current.message);
+
+        if (output.current.type == 'success') {
+          //alert(JSON.stringify(values, null, 2));
+
+          resetForm();
+        }
+      } else {
+        console.log("Something wrong in useSubmit hook!");
+      }
+
+      setSubmitting(false);
+      
+    }
   });
 ```
 
