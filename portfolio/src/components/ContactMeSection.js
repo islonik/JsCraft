@@ -141,8 +141,13 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
 
-              <Button disabled={formik.isSubmitting} type="submit" colorScheme="purple" width="full">
-                Submit
+              <Button 
+                type="submit" 
+                colorScheme="purple" 
+                width="full" 
+                disabled={formik.isSubmitting} 
+                isLoading={isLoading}>
+                  Submit
               </Button>
             </VStack>
           </form>
