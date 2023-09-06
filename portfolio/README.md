@@ -118,29 +118,20 @@ If you want to use any methods from the formik library inside your onSubmit func
                     .required('Required')
     }),
 
-    // Pass resetForm as a parameter to your onSubmit function. 
-    // That should give your function access to the resetForm method from Formik. 
-    // If you want to use any methods from the formik library inside your onSubmit function, first pass a parameter to the function so you can have access to the formik method.
-    onSubmit: async (values, {setSubmitting, resetForm}) => {
-
-      await submit("localhost", values);
-
-      if (!isLoading && output.current != null) {
-        onOpen(output.current.type, output.current.message);
-
-        if (output.current.type == 'success') {
-          //alert(JSON.stringify(values, null, 2));
-
-          resetForm();
-        }
-      } else {
-        console.log("Something wrong in useSubmit hook!");
-      }
-
-      setSubmitting(false);
-      
-    }
+    onSubmit: (values) => {
+      submit("http://localhost.me", values);
+    },
   });
+
+  // async update after formik->submit finishes it's work
+  useEffect(() => {
+    if (response) {
+      onOpen(response.type, response.message);
+      if (response.type === 'success') {
+        formik.resetForm();
+      }
+    }
+  }, [response]);
 ```
 
 #### OnSubmit
