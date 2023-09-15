@@ -4,10 +4,18 @@ This project was done as part of <b>Meta-Front End Developer Professional Certif
 <b>Figma</b> is a collaborative web application for interface design, with additional offline features enabled by desktop applications for macOS and Windows. The feature set of Figma focuses on user interface and user experience design, with an emphasis on real-time collaboration, utilising a variety of vector graphics editor and prototyping tools.
 
 ## Content
+* [Problem](#Problem-definition)
 * [User persona](#User-persona) 
 * [Journey map](#Journey-map)
 * [Wireframe](#Wireframe) 
 * [Prototype](#Prototype) 
+
+### Problem definition
+Little Lemon has a problem - booking a table provides a bad user experience. 
+
+We need to need to understand how Little Lemon can improve it's UI to significantly improve a user experience.
+
+To do that I'm going to create a user persona, a user journey map, wireframes and a prototype.
 
 ### User persona
 <b>User persona</b> is a semi-fictional character based on your current (or ideal) customer. Personas can be created by talking to users and segmenting by various demographic and psychographic data to improve your product marketing.
