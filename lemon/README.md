@@ -4,3 +4,4 @@ This project was done as part of <b>Meta-Front End Developer Professional Certif
 ## Content
 * [Classic](classic/README.md) - as a simple static HTML5 website with native JS functions and CSS styles
 * [Figma](figma/README.md) - UX/UI designs
+* [SPA](spa/README.md) - classic Little Lemon website/webpaga was redesigned to use React
