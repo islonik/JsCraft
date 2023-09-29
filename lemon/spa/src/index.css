@@ -42,7 +42,7 @@ li {
 
 footer {
   display: flex;
-  text-align: center; 
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -64,8 +64,8 @@ footer img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem;
-} 
+  padding: 2rem;
+}
 
 article {
   background: white;

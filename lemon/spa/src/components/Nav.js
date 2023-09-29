@@ -10,12 +10,11 @@ function Nav() {
     return (
 
         <Routes>
-            <Route path="/" element={<Homepage/>}></Route>
-            <Route path="/specials" element={<Specials/>}></Route>
-            <Route path="/specials" element={<Specials/>}></Route>
-            <Route path="/testimonials" element={<Testimonials/>}></Route>
-            <Route path="/booking" element={<Booking/>}></Route>
-            <Route path="/about" element={<About/>}></Route>
+            <Route path="/" element={<Homepage/>}>Home</Route>
+            <Route path="/specials" element={<Specials/>}>Specials</Route>
+            <Route path="/testimonials" element={<Testimonials/>}>Testimonials</Route>
+            <Route path="/booking" element={<Booking/>}>Booking</Route>
+            <Route path="/about" element={<About/>}>About</Route>
         </Routes>
         // <nav>
         //     <ul>
