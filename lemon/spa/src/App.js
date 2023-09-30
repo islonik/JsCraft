@@ -9,12 +9,12 @@ import Main from './components/Main';
 function App() {
   return (
     <Fragment className="App">
+      <Header/>
+      <Nav/>
       <BrowserRouter>
-        <Header/>
-        <Nav/>
         <Main/>
-        <Footer/>
       </BrowserRouter>
+      <Footer/>
     </Fragment>
   );
 }

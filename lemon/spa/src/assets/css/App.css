@@ -110,7 +110,6 @@ article:not(:first-child) img {
   padding: 2rem;
   position: relative;
   text-align: center;
-  width: 100%;
 }
 
 .intro-menu > img {
