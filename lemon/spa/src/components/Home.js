@@ -1,7 +1,7 @@
-import address from '../assets/address.png';
-import hours from '../assets/opening-hours.png';
-import phone from '../assets/phone.webp';
-import money from '../assets/money.webp';
+import address from '../assets/img/address.png';
+import hours from '../assets/img/opening-hours.png';
+import phone from '../assets/img/phone.webp';
+import money from '../assets/img/money.webp';
 
 function Home() {
     return (

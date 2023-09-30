@@ -1,0 +1,18 @@
+.nav-btn {
+    background: #b2c3af;
+    border:1px solid #000000;
+    color:#1b1b1b;
+    font-size:12px;
+    padding:10px 20px;
+    letter-spacing:2px;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+
+.nav-btn:hover {
+    background:rgba(0, 0, 0, 0.4);
+    background:#fff;
+    border:1px solid #000000;
+    color:#1b1b1b;
+    padding:20px 20px;
+}

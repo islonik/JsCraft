@@ -1,10 +1,10 @@
 // Menu (contains food, beverages and deserts)
-import food1 from '../assets/food_1.jpg';
-import food2 from '../assets/food_2.jpg';
-import drink1 from '../assets/drink_1.jpg';
-import drink2 from '../assets/drink_2.jpg';
-import desert1 from '../assets/desert_1.jpg';
-import desert2 from '../assets/desert_2.jpg';
+import food1 from '../assets/img/food_1.jpg';
+import food2 from '../assets/img/food_2.jpg';
+import drink1 from '../assets/img/drink_1.jpg';
+import drink2 from '../assets/img/drink_2.jpg';
+import desert1 from '../assets/img/desert_1.jpg';
+import desert2 from '../assets/img/desert_2.jpg';
 
 function Menu() {
     return (

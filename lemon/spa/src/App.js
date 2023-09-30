@@ -1,4 +1,4 @@
-import './App.css';
+import './assets/css/App.css';
 import { Fragment } from 'react';
 import { BrowserRouter} from "react-router-dom";
 import Footer from './components/Footer';
