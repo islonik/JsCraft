@@ -1,29 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Homepage from "./Homepage";
-import Specials from "./Specials";
-import Testimonials from "./Testimonials";
-import Booking from "./Booking";
-import About from "./About";
+// Nav (the component provides navigational links, should be in synch with Main component)
 
 function Nav() {
     return (
-
-        <Routes>
-            <Route path="/" element={<Homepage/>}>Home</Route>
-            <Route path="/specials" element={<Specials/>}>Specials</Route>
-            <Route path="/testimonials" element={<Testimonials/>}>Testimonials</Route>
-            <Route path="/booking" element={<Booking/>}>Booking</Route>
-            <Route path="/about" element={<About/>}>About</Route>
-        </Routes>
-        // <nav>
-        //     <ul>
-        //         <li><a href="#" onclick="showTab('home')">Home</a></li>
-        //         <li><a href="#" onclick="showTab('menu')">Menu</a></li>
-        //         <li><a href="#" onclick="showTab('about')">About</a></li>
-        //         <li><a href="mailto:example@example.com">Email</a></li>
-        //     </ul>
-        // </nav>
+        <nav>
+            <ul>
+                <li><a href="/">Main</a></li>
+                <li><a href="/menu" >Menu</a></li>
+                <li><a href="/specials">Specials</a></li>
+                <li><a href="/testimonials">Testimonials</a></li>
+                <li><a href="/booking">Booking</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="mailto:example@example.com">Email</a></li>
+            </ul>
+        </nav>
     );
 }
 

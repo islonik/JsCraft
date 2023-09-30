@@ -1,12 +1,18 @@
-// Menu (contains food, beverages and desserts)
+// Menu (contains food, beverages and deserts)
+import food1 from '../assets/food_1.jpg';
+import food2 from '../assets/food_2.jpg';
+import drink1 from '../assets/drink_1.jpg';
+import drink2 from '../assets/drink_2.jpg';
+import desert1 from '../assets/desert_1.jpg';
+import desert2 from '../assets/desert_2.jpg';
 
 function Menu() {
     return (
         <div id="menu" >
             <div class="menu">
                 <div class="intro-menu">
-                    <img src="assets/img/food_1.jpg" />
-                    <img src="assets/img/food_2.jpg" />
+                    <img src={food1} />
+                    <img src={food2} />
                 </div>
                 <section class="home-menu">
                     <h2>FOOD MENU</h2>
@@ -51,8 +57,8 @@ function Menu() {
             </div>
             <div class="menu">
                 <div class="intro-menu">
-                    <img src="assets/img/drink_1.jpg" />
-                    <img src="assets/img/drink_2.jpg" />
+                    <img src={drink1} />
+                    <img src={drink2} />
                 </div>
                 <section class="home-menu">
                     <h2>DRINK MENU</h2>
@@ -103,8 +109,8 @@ function Menu() {
             </div>
             <div class="menu">
                 <div class="intro-menu">
-                    <img src="assets/img/desert_1.jpg" />
-                    <img src="assets/img/desert_2.jpg" />
+                    <img src={desert1} />
+                    <img src={desert2} />
                 </div>
                 <section class="home-menu">
                     <h2>DESERT MENU</h2>
