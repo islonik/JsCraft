@@ -1,5 +1,5 @@
 // Booking a table(the component for the table reservations page)
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import {
@@ -15,6 +15,7 @@ import {
     Textarea,
     VStack,
   } from "@chakra-ui/react";
+import { SingleDatepicker } from "chakra-dayzed-datepicker";
 
 import {useAlertContext} from "../hooks/alertContext";
 import useSubmit from "../hooks/useSubmit";
@@ -30,31 +31,35 @@ function Booking() {
           email: '',
           phone: '',
           type: 'business',
+          date: new Date(),
           guests: '',
           comment: ''
         },
 
         validationSchema: Yup.object({
-            fullName:  Yup.string()
-                        .label("Name")
+            fullName: Yup.string()
+                        .label("name")
                         .required('Required'),
-            email:     Yup.string()
-                        .label("Email Address")
+            email:    Yup.string()
+                        .label("email")
                         .email('Invalid email address')
                         .required('Required'),
-            phone:     Yup.string()
-                        .label("Phone number")
+            phone:    Yup.string()
+                        .label("phone")
                         .matches('[0-9]{11,11}', 'Phone number should consist of 11 numbers')
                         .required('Required'),
-            type:      Yup.string()
-                        .label("Type of enquiry")
+            type:     Yup.string()
+                        .label("type")
                         .required('Required'),
-            guests:     Yup.string()
-                        .label("Guests number")
+            date:     Yup.string()
+                        .label('date')
+                        .required(),
+            guests:   Yup.string()
+                        .label("guests")
                         .matches('^[1-9][0-9]?$|^100$', 'Please specify the amount of guests from 1 to 100')
                         .required('Required'),
-            comment:   Yup.string()
-                        .label("Your message")
+            comment:  Yup.string()
+                        .label("comment")
                         .min(25, "Must be at least 25 characters!")
                         .required('Required')
         }),
@@ -135,6 +140,21 @@ function Booking() {
                       <option value="birthday">Birthday</option>
                   </Select>
                   <FormErrorMessage>{formik.values.type}</FormErrorMessage>
+                </FormControl>
+
+                <FormControl isInvalid={formik.touched.date && formik.errors.date}>
+                  <FormLabel htmlFor="date">Date</FormLabel>
+                  <SingleDatepicker
+                    id="date"
+                    name="date"
+                    type="date"
+                    format="yyyy-MM-dd"
+                    onDateChange={value => formik.setFieldValue('date', value)}
+                    onBlur={formik.handleBlur}
+                    minDate={new Date()}
+                    date={formik.values.date}
+                  />
+                  <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
                 </FormControl>
 
                 <FormControl isInvalid={formik.touched.guests && formik.errors.guests}>

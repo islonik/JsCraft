@@ -13,7 +13,7 @@ import { AlertProvider } from "./hooks/alertContext";
 
 function App() {
   return (
-    <Fragment className="App">
+    <Fragment>
       <ChakraProvider>
         <Header/>
         <Nav/>
