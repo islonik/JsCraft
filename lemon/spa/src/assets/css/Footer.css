@@ -1,0 +1,22 @@
+footer {
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+footer div {
+    flex: 1;
+    padding: auto;
+}
+
+footer div ul li {
+    padding-left: 0.5rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+footer img {
+    height: 4rem;
+    max-height: 100%;
+    vertical-align: middle;
+}

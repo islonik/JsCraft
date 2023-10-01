@@ -40,23 +40,6 @@ li {
   display: inline-block;
 }
 
-footer {
-  display: flex;
-  text-align: center;
-  vertical-align: middle;
-}
-
-footer div {
-  flex: 1;
-  padding: auto;
-}
-
-footer img {
-  height: 4rem;
-  max-height: 100%;
-  vertical-align: middle;
-}
-
 /* style also changes in index.js */
 #home {
   background: #b2c3af;
