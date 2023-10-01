@@ -40,7 +40,6 @@ li {
   display: inline-block;
 }
 
-/* style also changes in index.js */
 #home {
   background: #b2c3af;
   border-radius: 2rem;
@@ -100,6 +99,7 @@ article:not(:first-child) img {
   box-shadow: rgb(38, 57, 77) 0rem 2rem 3rem -1rem;
   filter: blur(0.03rem);
   height: auto;
+  padding-top: 1rem;
   width: 75%;
 }
 

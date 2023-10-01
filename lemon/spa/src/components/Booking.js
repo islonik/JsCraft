@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import {
     Box,
     Button,
+    Center,
     FormControl,
     FormErrorMessage,
     FormLabel,
@@ -25,22 +26,32 @@ function Booking() {
 
     const formik = useFormik({
         initialValues: {
-          firstName: '',
+          fullName: '',
           email: '',
-          type: 'hireMe',
+          phone: '',
+          type: 'business',
+          guests: '',
           comment: ''
         },
 
         validationSchema: Yup.object({
-            firstName: Yup.string()
+            fullName:  Yup.string()
                         .label("Name")
                         .required('Required'),
             email:     Yup.string()
                         .label("Email Address")
                         .email('Invalid email address')
                         .required('Required'),
+            phone:     Yup.string()
+                        .label("Phone number")
+                        .matches('[0-9]{11,11}', 'Phone number should consist of 11 numbers')
+                        .required('Required'),
             type:      Yup.string()
                         .label("Type of enquiry")
+                        .required('Required'),
+            guests:     Yup.string()
+                        .label("Guests number")
+                        .matches('^[1-9][0-9]?$|^100$', 'Please specify the amount of guests from 1 to 100')
                         .required('Required'),
             comment:   Yup.string()
                         .label("Your message")
@@ -64,28 +75,29 @@ function Booking() {
     }, [response]);
 
     return (
-        <VStack w="1024px" p={8} alignItems="flex-start">
+      <Center>
+        <VStack w="1024px" p={8} alignItems="center">
           <Heading as="h1" >
-            Contact me
+            Booking a table
           </Heading>
-          <Box p={6} rounded="md" w="100%">
+          <Box p={6} rounded="md" w="100%" alignItems="center">
             <form onSubmit={formik.handleSubmit}>
               <VStack spacing={4}>
 
-                <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
-                  <FormLabel htmlFor="firstName">Name</FormLabel>
+                <FormControl isInvalid={formik.touched.fullName && formik.errors.fullName}>
+                  <FormLabel htmlFor="fullName">Full name</FormLabel>
                   <Input
-                    id="firstName"
-                    name="firstName"
+                    id="fullName"
+                    name="fullName"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.firstName}
+                    value={formik.values.fullName}
                   />
-                  <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
+                  <FormErrorMessage>{formik.errors.fullName}</FormErrorMessage>
                 </FormControl>
 
                 <FormControl isInvalid={formik.touched.email && formik.errors.email}>
-                  <FormLabel htmlFor="email">Email Address</FormLabel>
+                  <FormLabel htmlFor="email">Email</FormLabel>
                   <Input
                     id="email"
                     name="email"
@@ -97,8 +109,21 @@ function Booking() {
                   <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
                 </FormControl>
 
+                <FormControl isInvalid={formik.touched.phone && formik.errors.phone}>
+                  <FormLabel htmlFor="phone">Phone number</FormLabel>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="phone"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.phone}
+                  />
+                  <FormErrorMessage>{formik.errors.phone}</FormErrorMessage>
+                </FormControl>
+
                 <FormControl isInvalid={formik.errors.type}>
-                  <FormLabel htmlFor="type">Type of enquiry</FormLabel>
+                  <FormLabel htmlFor="type">Type of lunch</FormLabel>
                   <Select
                     id="type"
                     name="type"
@@ -106,13 +131,23 @@ function Booking() {
                     onBlur={formik.handleBlur}
                     value={formik.values.type}
                     >
-                      <option value="hireMe">Freelance project proposal</option>
-                      <option value="openSource">
-                        Open source consultancy session
-                      </option>
-                      <option value="other">Other</option>
+                      <option value="business">Business</option>
+                      <option value="birthday">Birthday</option>
                   </Select>
                   <FormErrorMessage>{formik.values.type}</FormErrorMessage>
+                </FormControl>
+
+                <FormControl isInvalid={formik.touched.guests && formik.errors.guests}>
+                  <FormLabel htmlFor="guests">Number of guests</FormLabel>
+                  <Input
+                    id="guests"
+                    name="guests"
+                    type="guests"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.guests}
+                  />
+                  <FormErrorMessage>{formik.errors.guests}</FormErrorMessage>
                 </FormControl>
 
                 <FormControl isInvalid={formik.touched.comment && formik.errors.comment}>
@@ -140,6 +175,7 @@ function Booking() {
             </form>
           </Box>
         </VStack>
+      </Center>
     );
 }
 
