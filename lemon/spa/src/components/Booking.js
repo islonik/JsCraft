@@ -185,6 +185,7 @@ function Booking() {
 
                 <Button
                   type="submit"
+                  color="yellow"
                   colorScheme="lemon"
                   width="full"
                   disabled={isLoading}
