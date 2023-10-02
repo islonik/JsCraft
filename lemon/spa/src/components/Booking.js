@@ -1,5 +1,5 @@
 // Booking a table(the component for the table reservations page)
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import {
@@ -52,7 +52,7 @@ function Booking() {
                         .label("type")
                         .required('Required'),
             date:     Yup.string()
-                        .label('date')
+                        .label("date")
                         .required(),
             guests:   Yup.string()
                         .label("guests")
@@ -77,7 +77,7 @@ function Booking() {
                 formik.resetForm();
             }
         }
-    }, [response]);
+    }, [formik, onOpen, response]);
 
     return (
       <Center>
