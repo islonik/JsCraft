@@ -3,9 +3,9 @@ body {
   background-color: #edefee;
   font-family: 'Markazi Text', serif;
   margin-bottom: 3rem;
-  margin-left: 5%;
-  margin-right: 5%;
   margin-top: 3rem;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 /* different colour for your browser size if less than 50rem ~ 800px */
@@ -162,4 +162,8 @@ article:not(:first-child) img {
   padding-top: 1rem;
   position: relative;
   top: -0.7rem;
+}
+
+.submitButton {
+  color: #b2c3af;
 }

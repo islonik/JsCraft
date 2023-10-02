@@ -8,13 +8,21 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Nav from './components/Nav';
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { AlertProvider } from "./hooks/alertContext";
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      500: "#b2c3af"
+    }
+  }
+});
 
 function App() {
   return (
     <Fragment>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <Header/>
         <Nav/>
           <AlertProvider>
