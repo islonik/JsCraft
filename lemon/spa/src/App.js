@@ -13,7 +13,7 @@ import { AlertProvider } from "./hooks/alertContext";
 
 const theme = extendTheme({
   colors: {
-    brand: {
+    lemon: {
       500: "#b2c3af"
     }
   }

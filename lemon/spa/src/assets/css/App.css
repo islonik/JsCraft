@@ -163,7 +163,3 @@ article:not(:first-child) img {
   position: relative;
   top: -0.7rem;
 }
-
-.submitButton {
-  color: #b2c3af;
-}
