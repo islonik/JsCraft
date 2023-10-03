@@ -1,0 +1,83 @@
+.menu {
+    background-color: #b2c3af;
+    border-radius: 2rem;
+    box-shadow: rgb(38, 57, 77) 0rem 2rem 3rem -1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    left: 0%;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.intro-menu > img {
+    border-radius: 2rem;
+    box-shadow: rgb(38, 57, 77) 0rem 2rem 3rem -1rem;
+    filter: blur(0.03rem);
+    height: auto;
+    padding-top: 1rem;
+    width: 75%;
+}
+
+.intro-menu {
+    border-radius: 2rem;
+    color: rgb(39, 39, 39);
+    text-align: center;
+}
+
+.home-menu ul {
+    background-color: white;
+    border-radius: 2rem;
+    list-style: none;
+    padding: 3rem;
+}
+
+.home-menu h2 {
+    text-shadow: 0.06rem 0.06rem black;
+}
+
+.home-menu ul:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.home-menu li {
+    border-bottom: 0.08rem solid slategray;
+    float: left;
+    margin: 2rem 0 2rem 8%;
+    padding: 0;
+    width: 75%;
+}
+
+.dish {
+    background-color: transparent;
+    color: #555;
+    float: left;
+    font-weight: bold;
+    padding-right: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.price {
+    background-color: transparent;
+    color: #555;
+    float: right;
+    font-weight: bold;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.description {
+    color: #999;
+    clear: both;
+    display: block;
+    font-size: 1.2rem;
+    font-style: italic;
+    padding-top: 1rem;
+    position: relative;
+    top: -0.7rem;
+}

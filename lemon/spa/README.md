@@ -6,6 +6,7 @@ A <b>Single Page Application</b> is a website or web application that dynamicall
 ## Content
 * [How to add a custom color for a button](#how-to-add-a-custom-color-for-a-button)
 * [How to update date in Formik](#how-to-update-date-in-formik)
+* [TODOs](#todos)
 
 ### How to add a custom color for a button
 
@@ -129,3 +130,8 @@ Update date using Chakra library
     <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
 </FormControl>
 ```
+
+
+### TODOs
+
+Add another picture in about and do overlapping + change z position by click on the picture.

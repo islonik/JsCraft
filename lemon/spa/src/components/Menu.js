@@ -1,4 +1,7 @@
 // Menu (contains food, beverages and deserts)
+
+import '../assets/css/Menu.css';
+
 import food1 from '../assets/img/food_1.jpg';
 import food2 from '../assets/img/food_2.jpg';
 import drink1 from '../assets/img/drink_1.jpg';

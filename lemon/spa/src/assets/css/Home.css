@@ -1,0 +1,39 @@
+#home {
+    background: #b2c3af;
+    border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+article {
+    background: white;
+    border-radius: 2rem;
+    color: #000000;
+    display: inline-block;
+    font-family: "Open Sans", Arial;
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: 2rem;
+    opacity: 0.8;
+    text-align: auto;
+}
+
+article:first-child {
+    opacity: 1;
+    text-align: center;
+    width: 100%;
+}
+
+article:not(:first-child) {
+    flex: 1;
+}
+
+article:not(:first-child) img {
+    display: block;
+    border-bottom: 0.1rem solid slategray;
+    height: 7rem;
+    margin: auto;
+    max-height: 100%;
+}
