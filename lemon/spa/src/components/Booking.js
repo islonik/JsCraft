@@ -83,7 +83,7 @@ function Booking() {
       <Center>
         <VStack w="1024px" p={8} alignItems="center">
           <Heading as="h1" >
-            Booking a table
+            Reserve a table
           </Heading>
           <Box p={6} rounded="md" w="100%" alignItems="center">
             <form onSubmit={formik.handleSubmit}>
