@@ -11,16 +11,16 @@ function Specials() {
     return (
         <ul>
             <li>
-                <Special key="1" pic={food1} dish="Nachos" price="$12" desc="Cheese, onions, tomotoes."/>
+                <Special key="1" pic={food1} dish="Nachos" oldPrice="$12" newPrice="$10" desc="Cheese, onions, tomotoes."/>
             </li>
             <li>
-                <Special key="2" pic={food2} dish="Tacos" price="$12" desc="Chicken or beef with your choice of side"/>
+                <Special key="2" pic={food2} dish="Tacos" oldPrice="$12" newPrice="$10" desc="Chicken or beef with your choice of side"/>
             </li>
             <li>
-                <Special key="3" pic={drink1} dish="Vodka 1oz" price="$6" desc="Vodka and choice of juice or soda"/>
+                <Special key="3" pic={drink1} dish="Vodka 1oz" oldPrice="$6" newPrice="$5" desc="Vodka and choice of juice or soda"/>
             </li>
             <li>
-                <Special key="4" pic={drink2} dish="Rum 1oz" price="$6" desc="Rum and choice of juice or soda"/>
+                <Special key="4" pic={drink2} dish="Rum 1oz" oldPrice="$6" newPrice="$5" desc="Rum and choice of juice or soda"/>
             </li>
         </ul>
     );

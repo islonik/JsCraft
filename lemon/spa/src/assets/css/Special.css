@@ -20,9 +20,19 @@
     z-index: 1;
 }
 
-.special-price {
+.special-price-old {
     background-color: transparent;
-    color: #555;
+    color: black;
+    float: right;
+    font-weight: normal;
+    position: relative;
+    padding-left: 0.5rem;
+    text-decoration: line-through;
+}
+
+.special-price-new {
+    background-color: transparent;
+    color: red;
     float: right;
     font-weight: bold;
     position: relative;

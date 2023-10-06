@@ -70,12 +70,12 @@ function Menu() {
                         <li>
                             <span className="dish">Vodka 1oz</span>
                             <span className="price">$6</span>
-                            <span className="description">VODKA and choice of juice or soda</span>
+                            <span className="description">Vodka and choice of juice or soda</span>
                         </li>
                         <li>
                             <span className="dish">Rum 1oz</span>
                             <span className="price">$6</span>
-                            <span className="description">RUM and choice of juice or soda</span>
+                            <span className="description">Rum and choice of juice or soda</span>
                         </li>
                         <li>
                             <span className="dish">Whisky 1oz</span>
