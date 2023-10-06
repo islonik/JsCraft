@@ -14,8 +14,8 @@ function Menu() {
         <div id="menu" >
             <div className="menu">
                 <div className="intro-menu">
-                    <img src={food1} />
-                    <img src={food2} />
+                    <img src={food1} alt="tasty food"/>
+                    <img src={food2} alt="tasty food"/>
                 </div>
                 <section className="home-menu">
                     <h2>FOOD MENU</h2>
@@ -60,8 +60,8 @@ function Menu() {
             </div>
             <div className="menu">
                 <div className="intro-menu">
-                    <img src={drink1} />
-                    <img src={drink2} />
+                    <img src={drink1} alt="cold drink"/>
+                    <img src={drink2} alt="cold drink"/>
                 </div>
                 <section className="home-menu">
                     <h2>DRINK MENU</h2>
@@ -112,8 +112,8 @@ function Menu() {
             </div>
             <div className="menu">
                 <div className="intro-menu">
-                    <img src={desert1} />
-                    <img src={desert2} />
+                    <img src={desert1} alt="super sweet desert"/>
+                    <img src={desert2} alt="super sweet desert"/>
                 </div>
                 <section className="home-menu">
                     <h2>DESERT MENU</h2>
