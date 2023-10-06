@@ -1,0 +1,47 @@
+.special {
+    margin-inline: 2rem;
+}
+
+.special-pic {
+    aspect-ratio: 1; /* will make width equal to height (500px container) */
+    object-fit: cover; /* use the one you need */
+    margin-bottom: 1rem;
+    height: 15rem;
+    width: auto;
+}
+
+.special-dish {
+    background-color: transparent;
+    color: #555;
+    float: left;
+    font-weight: bold;
+    padding-right: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.special-price {
+    background-color: transparent;
+    color: #555;
+    float: right;
+    font-weight: bold;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.special-description {
+    color: #999;
+    clear: both;
+    display: block;
+    font-size: 1.2rem;
+    font-style: italic;
+    padding-top: 1rem;
+    position: relative;
+    text-align: left;
+    top: -0.7rem;
+
+    overflow: hidden;
+    max-width: 15rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

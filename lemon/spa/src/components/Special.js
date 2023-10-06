@@ -1,22 +1,14 @@
 // Special renders a single special.
+import '../assets/css/Special.css';
 
-import { Center, Box, HStack, VStack, Image } from "@chakra-ui/react";
-
-const Special = ({ pic, dish, desc }) => {
+const Special = ({ pic, dish, price, desc }) => {
     return (
-        <Center>
-            <VStack>
-                <HStack>
-                    <Image src={pic} alt={dish}/>
-                </HStack>
-                <HStack>
-                    <div>
-                        <h2>{dish}</h2>
-                        <p>{desc}</p>
-                    </div>
-                </HStack>
-            </VStack>
-        </Center>
+        <div className="special">
+            <img className="special-pic" src={pic} alt={dish}/>
+            <span className="special-dish">{dish}</span>
+            <span className="special-price">{price}</span>
+            <span className="special-description">{desc}</span>
+        </div>
     );
 }
 

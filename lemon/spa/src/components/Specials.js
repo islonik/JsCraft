@@ -6,15 +6,23 @@ import food1 from '../assets/img/food_1.jpg';
 import food2 from '../assets/img/food_2.jpg';
 import drink1 from '../assets/img/drink_1.jpg';
 import drink2 from '../assets/img/drink_2.jpg';
-import desert1 from '../assets/img/desert_1.jpg';
-import desert2 from '../assets/img/desert_2.jpg';
 
 function Specials() {
     return (
-        <div>
-            <Special key="1" pic={food1} dish="Nachos" desc="Cheese, onions, tomotoes."/>
-            <Special key="2" pic={food2} dish="Tacos" desc="Chicken or beef with your choice of side"/>
-        </div>
+        <ul>
+            <li>
+                <Special key="1" pic={food1} dish="Nachos" price="$12" desc="Cheese, onions, tomotoes."/>
+            </li>
+            <li>
+                <Special key="2" pic={food2} dish="Tacos" price="$12" desc="Chicken or beef with your choice of side"/>
+            </li>
+            <li>
+                <Special key="3" pic={drink1} dish="Vodka 1oz" price="$6" desc="Vodka and choice of juice or soda"/>
+            </li>
+            <li>
+                <Special key="4" pic={drink2} dish="Rum 1oz" price="$6" desc="Rum and choice of juice or soda"/>
+            </li>
+        </ul>
     );
 }
 
