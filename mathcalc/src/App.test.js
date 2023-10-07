@@ -12,7 +12,7 @@ test('initial result value', () => {
 
 test('insert value', () => {
   const dom = render(<App />);
-  
+
   // demonstrates how to enter a value in input value
   let inputElement = dom.container.querySelector("#input");
   fireEvent.change(inputElement, {
@@ -89,7 +89,7 @@ test('20 - 7 = 13', () => {
   });
   expect(inputElement.value).toBe("7");
 
-  // click 'Subtract' button 
+  // click 'Subtract' button
   let subtractButton = screen.getByText("Subtract");
   fireEvent.click(subtractButton);
 
