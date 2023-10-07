@@ -2,12 +2,12 @@
 
 import '../assets/css/Menu.css';
 
-import food1 from '../assets/img/food_1.jpg';
-import food2 from '../assets/img/food_2.jpg';
-import drink1 from '../assets/img/drink_1.jpg';
-import drink2 from '../assets/img/drink_2.jpg';
-import desert1 from '../assets/img/desert_1.jpg';
-import desert2 from '../assets/img/desert_2.jpg';
+import food1 from '../assets/img/menu/food_1.jpg';
+import food2 from '../assets/img/menu/food_2.jpg';
+import drink1 from '../assets/img/menu/drink_1.jpg';
+import drink2 from '../assets/img/menu/drink_2.jpg';
+import desert1 from '../assets/img/menu/desert_1.jpg';
+import desert2 from '../assets/img/menu/desert_2.jpg';
 
 function Menu() {
     return (

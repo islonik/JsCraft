@@ -1,10 +1,10 @@
 // Home contains Opening hours, Address, Phone, Price range and Promotion news
 import '../assets/css/Home.css';
 
-import address from '../assets/img/address.png';
-import hours from '../assets/img/opening-hours.png';
-import phone from '../assets/img/phone.webp';
-import money from '../assets/img/money.webp';
+import address from '../assets/img/home/address.png';
+import hours from '../assets/img/home/opening-hours.png';
+import phone from '../assets/img/home/phone.webp';
+import money from '../assets/img/home/money.webp';
 
 function Home() {
     return (

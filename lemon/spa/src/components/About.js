@@ -1,8 +1,8 @@
 // About (the component that describes the Little Lemon Chicago restaurant and gives a short backstory for it)
 import '../assets/css/About.css';
 
-import about1 from '../assets/img/about_1.jpg';
-import about2 from '../assets/img/about_2.jpg';
+import about1 from '../assets/img/about/about_1.jpg';
+import about2 from '../assets/img/about/about_2.jpg';
 
 import { Center, SimpleGrid, Box, HStack, VStack, Image } from "@chakra-ui/react";
 
