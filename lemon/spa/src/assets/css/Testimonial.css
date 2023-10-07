@@ -1,61 +1,54 @@
-.special {
+.testimonial {
+    background-color: #b2c3af;
+    border-radius: 2rem;
     margin-inline: 2rem;
+    margin-bottom: 1rem;
 }
 
-.special-pic {
+.testimonial-pic {
     aspect-ratio: 1; /* will make width equal to height (500px container) */
+    border-radius: 5px;
     border-top: 0.1rem solid black;
     border-left: 0.1rem solid black;
     border-right: 0.1rem solid black;
     border-bottom: 0.1rem solid black;
-    height: 15rem;
-    margin-bottom: 1rem;
     object-fit: cover; /* use the one you need */
+    float: left;
+    height: 5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
     width: auto;
 }
 
-.special-dish {
+.testimonial-name {
     background-color: transparent;
-    color: #555;
+    color: black;
     float: left;
     font-weight: bold;
     padding-right: 1.5rem;
     position: relative;
+    top: 2.5rem;
     z-index: 1;
 }
 
-.special-price-old {
-    background-color: transparent;
-    color: black;
-    float: right;
-    font-weight: normal;
-    position: relative;
-    padding-left: 0.5rem;
-    text-decoration: line-through;
-}
-
-.special-price-new {
-    background-color: transparent;
-    color: red;
-    float: right;
-    font-weight: bold;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.special-description {
-    color: #999;
+.testimonial-description {
+    color: #3c3c3c;
     clear: both;
     display: block;
     font-size: 1.2rem;
     font-style: italic;
     padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
     position: relative;
     text-align: left;
     top: -0.7rem;
 
     overflow: hidden;
-    max-width: 15rem;
+    max-width: 70rem;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
