@@ -1,8 +1,24 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import App from './App';
 
-test('renders learn react link', () => {
+test('Main page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const hours = screen.getByText('Opening hours');
+  expect(hours).toBeInTheDocument();
+
+  const address = screen.getByText("Address");
+  expect(address).toBeInTheDocument();
+
+  const phone = screen.getByText('708-452-6000');
+  expect(phone).toBeInTheDocument();
+
+  const price = screen.getByText('Price');
+  expect(price).toBeInTheDocument();
+
+  const main = screen.getByText('Main');
+  expect(main).toBeInTheDocument();
+
+  const menu = screen.getByText('Menu');
+  expect(menu).toBeInTheDocument();
 });
