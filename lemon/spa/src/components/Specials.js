@@ -11,7 +11,7 @@ function Specials() {
         fetch(process.env.REACT_APP_DB + "/specials")
           .then((response) => response.json())
           .then((data) => setSpecials(data))
-          .catch((error) => alert(error));
+          .catch((error) => console.log(error));
     };
 
     useEffect(() => {
