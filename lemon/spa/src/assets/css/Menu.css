@@ -14,8 +14,8 @@
 
 .intro-menu {
     border-radius: 2rem;
-    color: rgb(39, 39, 39);
-    text-align: left;
+    padding-left: 0;
+    padding-right: 10%;
 }
 
 .intro-menu > img {
@@ -24,14 +24,13 @@
     filter: blur(0.03rem);
     height: auto;
     margin-block-start: 1rem;
-    width: 75%;
 }
 
 .home-menu ul {
     background-color: white;
     border-radius: 2rem;
     list-style: none;
-    padding: 3rem;
+    padding: 1rem;
 }
 
 .home-menu h2 {
@@ -49,7 +48,7 @@
     float: left;
     margin: 2rem 0 2rem 8%;
     padding: 0;
-    width: 75%;
+    width: 85%;
 }
 
 .dish {
@@ -57,7 +56,7 @@
     color: #555;
     float: left;
     font-weight: bold;
-    padding-right: 1.5rem;
+    padding-right: 1rem;
     position: relative;
     z-index: 1;
 }
@@ -68,7 +67,7 @@
     float: right;
     font-weight: bold;
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
 .description {
