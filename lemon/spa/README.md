@@ -3,15 +3,59 @@ This project was done as part of <b>Meta-Front End Developer Professional Certif
 
 A <b>Single Page Application</b> is a website or web application that dynamically rewrites a current web page with new data from the web server, instead of the default method of a web browser loading entire new pages.
 
+## Start up
+
+1. Start up json-server
+```bash
+json-server --watch db.json --port 5555
+```
+
+2. Start up React
+```bash
+npm start
+```
+
 ## Content
+* [How to create a DB mock](#how-to-create-a-db-mock)
+* [How to create and share global properties](#how-to-create-and-share-global-properties)
 * [How to add a custom color for a button](#how-to-add-a-custom-color-for-a-button)
 * [How to update date in Formik](#how-to-update-date-in-formik)
 * [TODOs](#todos)
 
+### How to create a DB mock
+
+1. Install json-server
+
+```bash
+npm i -g json-server
+```
+
+2. Add json data. For example, db.json
+
+3. Run json-server
+```bash
+json-server --watch db.json --port 5555
+```
+
+### How to create and share global properties
+
+1. Create a .env file in the root of the React app
+2. Add variables. Each variable should start with a <b>REACT_APP_</b> for it to work.
+3. Import variables using <b>process.env.REACT_APP_</b>
+```jsx
+return (
+  <div>
+    <h1>
+      We are using {process.env.REACT_APP_DATABASE}
+    </h1>
+  </div>
+);
+```
+
 ### How to add a custom color for a button
 
 Chakra button component looks like:
-```js
+```jsx
 <Button
     type="submit"
     colorScheme="lemon"
@@ -28,7 +72,7 @@ https://chakra-ui.com/docs/components/button/usage
 But the colorScheme just accepts the color name. So if we want to add our color we would need to specify our custom color.
 
 To do it we need to extend the standard Chakra theme.
-```js
+```jsx
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
@@ -67,7 +111,7 @@ Then we can use lemon color for our button.
 ### How to update date in Formik
 
 Declare useFormik hook
-```js
+```jsx
 const formik = useFormik({
     initialValues: {
         fullName: '',
@@ -114,7 +158,7 @@ const formik = useFormik({
 ```
 
 Update date using Chakra library
-```js
+```jsx
 <FormControl isInvalid={formik.touched.date && formik.errors.date}>
     <FormLabel htmlFor="date">Date</FormLabel>
     <SingleDatepicker
