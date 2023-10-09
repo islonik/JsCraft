@@ -21,9 +21,36 @@ import {useAlertContext} from "../hooks/alertContext";
 import useSubmit from "../hooks/useSubmit";
 
 function Booking() {
-
     const {isLoading, response, submit} = useSubmit();
-    const { onOpen } = useAlertContext();
+    const {onOpen} = useAlertContext();
+
+    const yupValidationSchema = Yup.object({
+        fullName: Yup.string()
+                  .label("name")
+                  .required('Required Full Name'),
+        email:    Yup.string()
+                  .label("email")
+                  .email('Invalid email address')
+                  .required('Required Email address'),
+        phone:    Yup.string()
+                  .label("phone")
+                  .matches('[0-9]{11,11}', 'Phone number should consist of 11 numbers')
+                  .required('Required phone number'),
+        type:     Yup.string()
+                  .label("type")
+                  .required('Required type of reservation'),
+        date:     Yup.string()
+                  .label("date")
+                  .required('Required date'),
+        guests:   Yup.string()
+                  .label("guests")
+                  .matches('^[1-9][0-9]?$|^100$', 'Please specify the amount of guests from 1 to 100')
+                  .required('Required the amount of guests'),
+        comment:  Yup.string()
+                  .label("comment")
+                  .min(25, "Your comment must be at least 25 characters!")
+                  .required('Please provide your comment')
+    });
 
     const formik = useFormik({
         initialValues: {
@@ -36,33 +63,7 @@ function Booking() {
           comment: ''
         },
 
-        validationSchema: Yup.object({
-            fullName: Yup.string()
-                        .label("name")
-                        .required('Required'),
-            email:    Yup.string()
-                        .label("email")
-                        .email('Invalid email address')
-                        .required('Required'),
-            phone:    Yup.string()
-                        .label("phone")
-                        .matches('[0-9]{11,11}', 'Phone number should consist of 11 numbers')
-                        .required('Required'),
-            type:     Yup.string()
-                        .label("type")
-                        .required('Required'),
-            date:     Yup.string()
-                        .label("date")
-                        .required(),
-            guests:   Yup.string()
-                        .label("guests")
-                        .matches('^[1-9][0-9]?$|^100$', 'Please specify the amount of guests from 1 to 100')
-                        .required('Required'),
-            comment:  Yup.string()
-                        .label("comment")
-                        .min(25, "Must be at least 25 characters!")
-                        .required('Required')
-        }),
+        validationSchema: yupValidationSchema,
 
         onSubmit: (values) => {
           submit("http://localhost.me", values);
@@ -184,6 +185,7 @@ function Booking() {
                 </FormControl>
 
                 <Button
+                  id="booking-submit"
                   type="submit"
                   color="yellow"
                   colorScheme="lemon"
