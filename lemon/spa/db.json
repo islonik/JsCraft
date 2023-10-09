@@ -1,4 +1,142 @@
 {
+    "food" : [
+        {
+            "id": 1,
+            "dish" : "Nachos",
+            "price": "$12",
+            "desc" : "Cheese, onions, tomotoes."
+        },
+        {
+            "id": 2,
+            "dish" : "Tacos",
+            "price": "$12",
+            "desc" : "Chicken or beef with your choice of side."
+        },
+        {
+            "id": 3,
+            "dish" : "Chicken rice bowl",
+            "price": "$16",
+            "desc" : "Brown rice, and veggies, served with choice or sauce."
+        },
+        {
+            "id": 4,
+            "dish" : "Grilled chicken",
+            "price": "$15",
+            "desc" : "Juicy grilled chicken served with choice of sauce."
+        },
+        {
+            "id": 5,
+            "dish" : "Steak and fired beans",
+            "price": "$15",
+            "desc" : "Steak and your choice of side."
+        },
+        {
+            "id": 6,
+            "dish" : "Burrito",
+            "price": "$12",
+            "desc" : "Your choice of beef or chicken."
+        }
+    ],
+    "drinks" : [
+        {
+            "id": 1,
+            "dish" : "Vodka 1oz",
+            "price": "$6",
+            "desc" : "Vodka and choice of juice or soda"
+        },
+        {
+            "id": 2,
+            "dish" : "Rum 1oz",
+            "price": "$6",
+            "desc" : "Rum and choice of juice or soda"
+        },
+        {
+            "id": 3,
+            "dish" : "Whisky 1oz",
+            "price": "$6",
+            "desc" : "Whisky and choice of juice or soda"
+        },
+        {
+            "id": 4,
+            "dish" : "Tequila 1oz",
+            "price": "$6",
+            "desc" : "Tequila served with juice or soda"
+        },
+        {
+            "id": 5,
+            "dish" : "Red wine",
+            "price": "$8",
+            "desc" : "8oz Red wine, ask server for our wine selection"
+        },
+        {
+            "id": 6,
+            "dish" : "White wine",
+            "price": "$8",
+            "desc" : "8oz white wine, ask server for our wine selection"
+        },
+        {
+            "id": 7,
+            "dish" : "Sparkling wine",
+            "price": "$12",
+            "desc" : "8oz sparking wine glass of your choice"
+        },
+        {
+            "id": 8,
+            "dish" : "Domestic or foreign beer",
+            "price": "$6 - $8",
+            "desc" : "Domestic or foreign beer of you choice"
+        }
+    ],
+    "deserts" : [
+        {
+            "id": 1,
+            "dish" : "Chocolate cake",
+            "price": "$7",
+            "desc" : "Loaded Chocolate cake with fudge topping"
+        },
+        {
+            "id": 2,
+            "dish" : "NY cheesecake",
+            "price": "$12",
+            "desc" : "NY cheesecake toped with strawberry topping"
+        },
+        {
+            "id": 3,
+            "dish" : "Apple pie",
+            "price": "$6",
+            "desc" : "Warm apple pie tooped with icecream"
+        },
+        {
+            "id": 4,
+            "dish" : "Churros",
+            "price": "$7",
+            "desc" : "Pancake mix, water, oil, sugar, cinnamon"
+        },
+        {
+            "id": 5,
+            "dish" : "Sopaipillas",
+            "price": "$7",
+            "desc" : "Light, crispy pastry puffs, sopaipillas are a sweet way to round out a spicy meal"
+        },
+        {
+            "id": 6,
+            "dish" : "Creamy Caramel Flan",
+            "price": "$12",
+            "desc" : "A small slice of this impressively rich, creamy, caramel flan dessert goes a long way"
+        },
+        {
+            "id": 7,
+            "dish" : "Shortcut Tres Leches Cake",
+            "price": "$12",
+            "desc" : "My mom's favorite cake is tres leches, a butter cake soaked in three kinds of milk"
+        },
+        {
+            "id": 8,
+            "dish" : "Pressure-Cooker Pumpkin Flans",
+            "price": "$14",
+            "desc" : "This silky, smooth dessert captures the essence and elegance of fall"
+        }
+    ],
     "specials": [
         {
             "id" : 1,

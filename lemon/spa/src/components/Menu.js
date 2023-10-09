@@ -1,6 +1,9 @@
 // Menu (contains food, beverages and deserts)
+import React, {useState, useEffect} from "react";
 
 import '../assets/css/Menu.css';
+
+import MenuItem from "./MenuItem";
 
 import food1 from '../assets/img/menu/food_1.jpg';
 import food2 from '../assets/img/menu/food_2.jpg';
@@ -10,6 +13,44 @@ import desert1 from '../assets/img/menu/desert_1.jpg';
 import desert2 from '../assets/img/menu/desert_2.jpg';
 
 function Menu() {
+
+    const [food, setFood] = useState([]);
+    const [drinks, setDrinks] = useState([]);
+    const [deserts, setDeserts] = useState([]);
+
+    const fetchFoodData = () => {
+        fetch(process.env.REACT_APP_DB + "/food")
+          .then((response) => response.json())
+          .then((data) => setFood(data))
+          .catch((error) => console.log(error));
+    };
+
+    const fetchDrinksData = () => {
+        fetch(process.env.REACT_APP_DB + "/drinks")
+          .then((response) => response.json())
+          .then((data) => setDrinks(data))
+          .catch((error) => console.log(error));
+    };
+
+    const fetchDesertsData = () => {
+        fetch(process.env.REACT_APP_DB + "/deserts")
+          .then((response) => response.json())
+          .then((data) => setDeserts(data))
+          .catch((error) => console.log(error));
+    };
+
+    useEffect(() => {
+        fetchFoodData();
+    }, []);
+
+    useEffect(() => {
+        fetchDrinksData();
+    }, []);
+
+    useEffect(() => {
+        fetchDesertsData();
+    }, []);
+
     return (
         <div id="menu" >
             <div className="menu">

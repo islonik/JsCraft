@@ -11,7 +11,7 @@ function Testimonials() {
         fetch(process.env.REACT_APP_DB + "/testimonials")
           .then((response) => response.json())
           .then((data) => setTestimonials(data))
-          .catch((error) => alert(error));
+          .catch((error) => console.log(error));
     };
 
     useEffect(() => {
