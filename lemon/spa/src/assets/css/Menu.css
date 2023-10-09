@@ -21,6 +21,7 @@
 .intro-menu > img {
     border-radius: 2rem;
     box-shadow: rgb(38, 57, 77) 0rem 2rem 3rem -1rem;
+    border: 0.1rem solid black;
     filter: blur(0.03rem);
     height: auto;
     margin-block-start: 1rem;

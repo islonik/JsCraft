@@ -4,10 +4,7 @@
 
 .special-pic {
     aspect-ratio: 1; /* will make width equal to height (500px container) */
-    border-top: 0.1rem solid black;
-    border-left: 0.1rem solid black;
-    border-right: 0.1rem solid black;
-    border-bottom: 0.1rem solid black;
+    border: 0.1rem solid black;
     height: 15rem;
     margin-bottom: 1rem;
     object-fit: cover; /* use the one you need */
