@@ -61,13 +61,7 @@ test('Specials page', async() => {
     render(<Specials />);
 
     expect(await screen.findByText('Nachos')).toBeInTheDocument();
-
-    const tacos = screen.getByText('Tacos');
-    expect(tacos).toBeInTheDocument();
-
-    const drink = screen.getByText("Vodka 1oz");
-    expect(drink).toBeInTheDocument();
-
-    const cake = screen.getByText('Rum 1oz');
-    expect(cake).toBeInTheDocument();
+    expect(await screen.findByText('Tacos')).toBeInTheDocument();
+    expect(await screen.findByText('Vodka 1oz')).toBeInTheDocument();
+    expect(await screen.findByText('Rum 1oz')).toBeInTheDocument();
 });
