@@ -16,13 +16,14 @@ npm start
 ```
 
 ## Content
-* [How to create a DB mock](#how-to-create-a-db-mock)
+* [How to create a DB mock using json-server](#how-to-create-a-db-mock-using-json-server)
+* [How to create a test mocking HTTP requests using testing-library](#how-to-create-a-test-mocking-http-requests-using-testing-library)
 * [How to create and share global properties](#how-to-create-and-share-global-properties)
 * [How to add a custom color for a button](#how-to-add-a-custom-color-for-a-button)
 * [How to update date in Formik](#how-to-update-date-in-formik)
 * [TODOs](#todos)
 
-### How to create a DB mock
+### How to create a DB mock using json-server
 
 1. Install json-server
 
@@ -35,6 +36,81 @@ npm i -g json-server
 3. Run json-server
 ```bash
 json-server --watch db.json --port 5555
+```
+
+### How to create a test mocking HTTP requests using testing-library
+1. Import resources
+```jsx
+import { render, screen } from '@testing-library/react';
+
+import Menu from '../components/Menu';
+```
+
+2. Create mock data
+```jsx
+const foodResponse = [
+  {
+    "id": 1,
+    "dish" : "Nachos",
+    "price": "$12",
+    "desc" : "Cheese, onions, tomotoes."
+  },
+  {
+    "id": 2,
+    "dish" : "Tacos",
+    "price": "$12",
+    "desc" : "Chicken or beef with your choice of side."
+  }
+]
+```
+
+3. Intercept HTTP request
+```jsx
+async function mockFetch(url) {
+  if (url.startsWith(process.env.REACT_APP_DB + "/food")) {
+    return {
+      ok: true,
+      status: 200,
+      json: async () => foodResponse,
+    };
+  } else if (url.startsWith(process.env.REACT_APP_DB + "/drinks")) {
+    return {
+      ok: true,
+      status: 200,
+      json: async () => drinksResponse,
+    };
+  } else if (url.startsWith(process.env.REACT_APP_DB + "/deserts")) {
+    return {
+      ok: true,
+      status: 200,
+      json: async () => desertsResponse,
+    };
+  }
+
+  throw new Error(`Unhandled request: ${url}`);
+}
+```
+
+4. Inject mocks
+```jsx
+beforeEach(() => {
+  windowFetchSpy = jest.spyOn(window, 'fetch').mockImplementation(mockFetch);
+})
+
+afterEach(() => {
+  jest.restoreAllMocks();
+});
+```
+
+5. Create a test
+```jsx
+test('Menu page', async () => {
+  render(<Menu />);
+
+  expect(await screen.findByText('Nachos')).toBeInTheDocument();
+  expect(await screen.findByText('Tacos')).toBeInTheDocument();
+
+});
 ```
 
 ### How to create and share global properties
