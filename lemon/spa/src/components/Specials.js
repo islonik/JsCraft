@@ -22,14 +22,13 @@ function Specials() {
         <ul>
             {
                 specials.map((special) => (
-                    <li key={special.id}>
-                        <Special
-                            pic={special.pic}
-                            dish={special.dish}
-                            oldPrice={special.oldPrice}
-                            newPrice={special.newPrice}
-                            desc={special.desc}/>
-                    </li>
+                    <Special
+                        key={special.id}
+                        pic={special.pic}
+                        dish={special.dish}
+                        oldPrice={special.oldPrice}
+                        newPrice={special.newPrice}
+                        desc={special.desc}/>
                 ))
             }
         </ul>

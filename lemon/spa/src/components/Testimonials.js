@@ -22,12 +22,11 @@ function Testimonials() {
         <ul>
         {
             testimonials.map((testimonial) => (
-                <li key={testimonial.id}>
-                    <Testimonial
-                        pic={testimonial.pic}
-                        name={testimonial.name}
-                        text={testimonial.text}/>
-                </li>
+                <Testimonial
+                    key={testimonial.id}
+                    pic={testimonial.pic}
+                    name={testimonial.name}
+                    text={testimonial.text}/>
             ))
         }
         </ul>
