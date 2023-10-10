@@ -1,5 +1,5 @@
 // Booking a table(the component for the table reservations page)
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import {
@@ -21,11 +21,12 @@ import {useAlertContext} from "../hooks/alertContext";
 import useSubmit from "../hooks/useSubmit";
 
 function Booking() {
+    const [booking, setBooking] = useState([]);
     const {isLoading, response, submit} = useSubmit();
     const {onOpen} = useAlertContext();
 
     const yupValidationSchema = Yup.object({
-        fullName: Yup.string()
+        name:     Yup.string()
                   .label("name")
                   .required('Required Full Name'),
         email:    Yup.string()
@@ -54,7 +55,7 @@ function Booking() {
 
     const formik = useFormik({
         initialValues: {
-          fullName: '',
+          name: '',
           email: '',
           phone: '',
           type: 'business',
@@ -66,7 +67,33 @@ function Booking() {
         validationSchema: yupValidationSchema,
 
         onSubmit: (values) => {
-          submit("http://localhost.me", values);
+          let url = process.env.REACT_APP_DB + "/booking";
+
+          // GET request
+          fetch(url)
+            .then((response) => response.json())
+            .then((data) => setBooking(data))
+            .catch((error) => console.log(error));
+
+          // ad-hoc id generation
+          values['id'] = Math.random().toString(16).slice(2);
+          console.log(values);
+          // values.push({"id": id});
+          // console.log(values);
+
+          // PUT request
+          const json = JSON.stringify(values);
+          console.log(json);
+          const requestOptions = {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: json
+          };
+          const response = fetch(url, requestOptions);
+          console.log(response);
+              // .then(response => response.json())
+              // .then(data => setPostId(data.id));
+          // submit(process.env.REACT_APP_DB + "/booking", values);
         },
     });
 
@@ -90,16 +117,16 @@ function Booking() {
             <form onSubmit={formik.handleSubmit}>
               <VStack spacing={4}>
 
-                <FormControl isInvalid={formik.touched.fullName && formik.errors.fullName}>
+                <FormControl isInvalid={formik.touched.name && formik.errors.name}>
                   <FormLabel htmlFor="fullName">Full name</FormLabel>
                   <Input
                     id="fullName"
-                    name="fullName"
+                    name="name"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.fullName}
+                    value={formik.values.name}
                   />
-                  <FormErrorMessage>{formik.errors.fullName}</FormErrorMessage>
+                  <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
                 </FormControl>
 
                 <FormControl isInvalid={formik.touched.email && formik.errors.email}>
