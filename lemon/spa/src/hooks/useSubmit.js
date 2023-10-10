@@ -15,14 +15,26 @@ const useSubmit = () => {
     setLoading(true);
     console.log(data);
     try {
-      await wait(2000);
-      if (random < 0.5) {
-        throw new Error("Something went wrong");
+      if (data.guests == 2) { // always success
+        setResponse({
+          type: 'success',
+          message: `Thanks for your submission ${data.fullName}, we will get back to you shortly!`,
+        });
+      } else if (data.guests >= 3) { // always error
+        setResponse({
+          type: 'error',
+          message: "Unfortunatelly we don't have capacity for your request. Please choose another day!",
+        });
+      } else { // random
+        await wait(2000);
+        if (random < 0.5) {
+          throw new Error("Something went wrong");
+        }
+        setResponse({
+          type: 'success',
+          message: `Thanks for your submission ${data.fullName}, we will get back to you shortly!`,
+        });
       }
-      setResponse({
-        type: 'success',
-        message: `Thanks for your submission ${data.fullName}, we will get back to you shortly!`,
-      });
     } catch (error) {
       setResponse({
         type: 'error',

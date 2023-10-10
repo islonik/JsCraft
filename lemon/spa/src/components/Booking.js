@@ -78,7 +78,7 @@ function Booking() {
                 formik.resetForm();
             }
         }
-    }, [formik, onOpen, response]);
+    }, [response]);
 
     return (
       <Center>
