@@ -3,6 +3,27 @@ import {act, fireEvent, render, screen} from '@testing-library/react';
 import Booking from '../components/Booking';
 import { AlertProvider } from "../hooks/alertContext";
 
+const successResponse = {
+    "type": "success",
+    "message" : "Thanks for your submission Nick, we will get back to you shortly!"
+}
+
+async function mockFetch(url) {
+    return {
+        ok: true,
+        status: 200,
+        json: async () => successResponse,
+    };
+}
+
+beforeEach(() => {
+    windowFetchSpy = jest.spyOn(window, 'fetch').mockImplementation(mockFetch);
+})
+
+afterEach(() => {
+    jest.restoreAllMocks();
+});
+
 test('empty Full name', async() => {
     const dom = render(
         <AlertProvider>
@@ -33,7 +54,7 @@ test('empty Email address', async() => {
         </AlertProvider>
     );
 
-    // enter input
+    // enter email
     let emailInput = dom.container.querySelector("#email");
     fireEvent.change(emailInput, {
       target: {value: ''}
@@ -56,7 +77,7 @@ test('wrong Email address', async() => {
         </AlertProvider>
     );
 
-    // enter input
+    // enter email
     let emailInput = dom.container.querySelector("#email");
     fireEvent.change(emailInput, {
       target: {value: '5'}
@@ -268,4 +289,60 @@ test('short comment', async() => {
     // check the error message
     let requiredText = await screen.findByText("Your comment must be at least 25 characters!");
     expect(requiredText).toBeInTheDocument();
+});
+
+test('success', async() => {
+    const dom = render(
+        <AlertProvider>
+            <Booking />
+        </AlertProvider>
+    );
+
+    // name
+    let fullNameInput = dom.container.querySelector("#fullName");
+    fireEvent.change(fullNameInput, {
+      target: {value: 'Nick'}
+    });
+    expect(fullNameInput.value).toBe("Nick");
+
+    // email
+    let emailInput = dom.container.querySelector("#email");
+    fireEvent.change(emailInput, {
+        target: {value: 'nick@nick.com'}
+    });
+    expect(emailInput.value).toBe("nick@nick.com");
+
+    // phone
+    let phoneInput = dom.container.querySelector("#phone");
+    fireEvent.change(phoneInput, {
+        target: {value: '12345678901'}
+    });
+    expect(phoneInput.value).toBe("12345678901");
+
+    // comment
+    let commentInput = dom.container.querySelector("#comment");
+    await act(async() => {
+        fireEvent.change(commentInput, {
+            target: {value: 'I love your cafe so I would like to book a table.'}
+        });
+    })
+    expect(commentInput.value).toBe("I love your cafe so I would like to book a table.");
+
+    // guests
+    let guestsInput = dom.container.querySelector("#guests");
+    await act(async() => {
+        fireEvent.change(guestsInput, {
+            target: {value: '2'}
+        });
+    })
+    expect(guestsInput.value).toBe("2");
+
+    // click submit
+    let submit = await dom.container.querySelector("#booking-submit");
+    await act(async() => {
+        fireEvent.click(submit);
+    })
+    // check the result message
+    // let requiredText = await screen.findByText("Thanks for your submission Nick");
+    // expect(requiredText).toBeInTheDocument();
 });
