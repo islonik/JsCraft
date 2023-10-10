@@ -1,5 +1,6 @@
 import {act, fireEvent, render, screen} from '@testing-library/react';
 
+import Alert from '../components/Alert';
 import Booking from '../components/Booking';
 import { AlertProvider } from "../hooks/alertContext";
 
@@ -295,6 +296,7 @@ test('success', async() => {
     const dom = render(
         <AlertProvider>
             <Booking />
+            <Alert/>
         </AlertProvider>
     );
 
@@ -343,6 +345,6 @@ test('success', async() => {
         fireEvent.click(submit);
     })
     // check the result message
-    // let requiredText = await screen.findByText("Thanks for your submission Nick");
-    // expect(requiredText).toBeInTheDocument();
+    let requiredText = await screen.findByText("Thanks for your submission Nick, we will get back to you shortly!");
+    expect(requiredText).toBeInTheDocument();
 });
