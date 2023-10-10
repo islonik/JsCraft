@@ -1,6 +1,7 @@
 {
   "booking": [
     {
+      "id": "manual-id-1",
       "name": "Nick",
       "email": "nick@nick.com",
       "phone": "12345678901",
