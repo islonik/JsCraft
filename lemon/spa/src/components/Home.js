@@ -14,14 +14,14 @@ function Home() {
                 Book your party today! Just send us an email!
             </article>
             <article>
-                <img src={hours} /><br/>
+                <img src={hours} alt="Working hours"/><br/>
                 <b>Opening hours</b><br/><br/>
                 Monday-Friday:<br/>2pm - 10pm<br/><br/>
                 Saturday:<br/>2pm - 11pm<br/><br/>
                 Sunday:<br/>2pm - 9pm
             </article>
             <article>
-                <img src={address} /><br/>
+                <img src={address} alt="Address"/><br/>
                 <b>Address</b><br/><br/>
                 75 W North Ave<br/>
                 Elmwood Park<br/>
@@ -29,12 +29,12 @@ function Home() {
                 Chicago
             </article>
             <article>
-                <img src={phone} /><br/>
+                <img src={phone} alt="Phone"/><br/>
                 <b>Phone</b><br/><br/>
                 708-452-6000
             </article>
             <article>
-                <img src={money} /><br/>
+                <img src={money} alt="Money"/><br/>
                 <b>Price</b><br/><br/>
                 $
             </article>

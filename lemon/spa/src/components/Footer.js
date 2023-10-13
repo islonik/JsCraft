@@ -7,7 +7,7 @@ function Footer() {
         <footer>
             <div>
                 <ul>
-                    <li><img src={logo}/></li>
+                    <li><img src={logo} alt="logo"/></li>
                     <li>Copyright Little Lemon</li>
                 </ul>
             </div>
