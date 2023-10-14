@@ -2,6 +2,8 @@
 import React, {useState, useEffect} from "react";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
+import { parseISO, startOfDay, subDays} from 'date-fns';
+
 import {
     Box,
     Button,
@@ -21,6 +23,7 @@ import {useAlertContext} from "../hooks/alertContext";
 import useSubmit from "../hooks/useSubmit";
 
 function Booking() {
+    const [excludedDates, setExcludedDates] = useState([]);
     const [booking, setBooking] = useState([]);
     const {isLoading, response, submit} = useSubmit();
     const {onOpen} = useAlertContext();
@@ -53,6 +56,16 @@ function Booking() {
                   .required('Please provide your comment')
     });
 
+    const fetchBooking = () => {
+      let url = process.env.REACT_APP_DB + "/booking";
+
+      // GET request
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => setBooking(data))
+        .catch((error) => console.log(error));
+    };
+
     const formik = useFormik({
         initialValues: {
           name: '',
@@ -67,35 +80,28 @@ function Booking() {
         validationSchema: yupValidationSchema,
 
         onSubmit: (values) => {
-          let url = process.env.REACT_APP_DB + "/booking";
 
-          // GET request
-          fetch(url)
-            .then((response) => response.json())
-            .then((data) => setBooking(data))
-            .catch((error) => console.log(error));
+          // simulate backend
+          submit("/booking", values);
 
-          // ad-hoc id generation
-          values['id'] = Math.random().toString(16).slice(2);
-          console.log(values);
-          // values.push({"id": id});
-          // console.log(values);
-
-          // PUT request
-          const json = JSON.stringify(values);
-          console.log(json);
-          const requestOptions = {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: json
-          };
-          const response = fetch(url, requestOptions);
-          console.log(response);
-              // .then(response => response.json())
-              // .then(data => setPostId(data.id));
-          // submit(process.env.REACT_APP_DB + "/booking", values);
+          fetchBooking(); // reload booking
         },
     });
+
+    useEffect(() => {
+      fetchBooking();
+    }, []);
+
+    useEffect(() => {
+      // we get booking from fetchBooking()
+      let bookingArray = Array.from(booking);
+
+      // transform booking text date into excluded dates
+      let dates = new Set(bookingArray.map(item => startOfDay(parseISO(item.date)).getTime()));
+
+      // set excluded dates
+      setExcludedDates(dates);
+    }, [booking]);
 
     // async update after formik->submit finishes it's work
     useEffect(() => {
@@ -179,7 +185,8 @@ function Booking() {
                     format="yyyy-MM-dd"
                     onDateChange={value => formik.setFieldValue('date', value)}
                     onBlur={formik.handleBlur}
-                    minDate={new Date()}
+                    disabledDates={excludedDates}
+                    minDate={subDays(new Date(), 1)}
                     date={formik.values.date}
                   />
                   <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
