@@ -38,7 +38,7 @@ function Booking() {
                   .required('Required Email address'),
         phone:    Yup.string()
                   .label("phone")
-                  .matches('[0-9]{11,11}', 'Phone number should consist of 11 numbers')
+                  .matches('^[0-9]{11}$', 'Phone number should consist of 11 numbers')
                   .required('Required phone number'),
         type:     Yup.string()
                   .label("type")
