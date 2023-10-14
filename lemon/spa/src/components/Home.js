@@ -10,8 +10,7 @@ function Home() {
     return (
         <div id="home">
             <article>
-                <b>We are providing a discount of 30% on your Birthday!</b><br/><br/>
-                Book your party today! Just send us an email!
+                <b>We are providing a discount of 30% on your Birthday!</b><br/>
             </article>
             <article>
                 <img src={hours} alt="Working hours"/><br/>
