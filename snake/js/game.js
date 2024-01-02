@@ -3,12 +3,12 @@ import {update as updateFood, draw as drawFood} from './food.js'
 import {outsideGrid} from './grid.js'
 
 let lastRenderTime = 0
-let gameOver = false;
 const SNAKE_WIN_SIZE = 30
 const gameBoard = document.getElementById('game-board')
 
+// we constantly execute this method
 function main(currentTime) {
-    if (gameOver) {
+    if (checkDeath()) {
         reloadWindows('You lost. Press ok to restart')
         return
     }
@@ -36,8 +36,6 @@ window.requestAnimationFrame(main)
 function update() {
     updateSnake()
     updateFood()
-    checkDeath()
-    checkWin()
 }
 
 function draw() {
@@ -48,7 +46,7 @@ function draw() {
 }
 
 function checkDeath() {
-    gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+    return outsideGrid(getSnakeHead()) || snakeIntersection()
 }
 
 function checkWin() {

@@ -1,5 +1,5 @@
 
-const GRID_SIZE = 21
+const GRID_SIZE = 21 // depends on the CSS style in index.html
 
 export function randomGridPosition() {
     return {
